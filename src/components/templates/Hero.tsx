@@ -1,10 +1,11 @@
 import Link from 'next/link';
 
-import { Background } from '../background/Background';
-import { Button } from '../button/Button';
-import { HeroOneButton } from '../hero/HeroOneButton';
-import { Section } from '../layout/Section';
-import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
+import { Background } from '@/components/atoms/background/Background';
+import { Button } from '@/components/atoms/button/Button';
+import { Section } from '@/components/layout/Section';
+import { NavbarTwoColumns } from '@/components/navigation/NavbarTwoColumns';
+import { HeroOneButton } from '@/components/organisms/hero/HeroOneButton';
+
 import { Logo } from './Logo';
 
 const Hero = () => (
