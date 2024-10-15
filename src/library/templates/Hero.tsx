@@ -1,12 +1,12 @@
 import Link from 'next/link';
+import React from 'react';
 
-import { Background } from '@/components/atoms/background/Background';
-import { Button } from '@/components/atoms/button/Button';
-import { Section } from '@/components/layout/Section';
-import { NavbarTwoColumns } from '@/components/navigation/NavbarTwoColumns';
-import { HeroOneButton } from '@/components/organisms/hero/HeroOneButton';
-
-import { Logo } from './Logo';
+import { Background } from '@/library/components/atoms/background/Background';
+import { Button } from '@/library/components/atoms/button/Button';
+import { HeroOneButton } from '@/library/components/organisms/hero/HeroOneButton';
+import { Section } from '@/library/layout/Section';
+import { NavbarTwoColumns } from '@/library/navigation/NavbarTwoColumns';
+import { Logo } from '@/library/templates/Logo';
 
 const Hero = () => (
   <Background color="bg-gray-100">

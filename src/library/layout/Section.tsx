@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import React from 'react';
 
 type ISectionProps = {
   title?: string;

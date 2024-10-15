@@ -1,6 +1,5 @@
-import { Section } from '@/components/layout/Section';
-
-import { VerticalFeatureRow } from '../organisms/feature/VerticalFeatureRow';
+import { VerticalFeatureRow } from '@/library/components/organisms/feature/VerticalFeatureRow';
+import { Section } from '@/library/layout/Section';
 
 const VerticalFeatures = () => (
   <Section

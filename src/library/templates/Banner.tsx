@@ -1,9 +1,9 @@
 import Link from 'next/link';
+import React from 'react';
 
-import { Button } from '@/components/atoms/button/Button';
-import { Section } from '@/components/layout/Section';
-
-import { CTABanner } from '../organisms/cta/CTABanner';
+import { Button } from '@/library/components/atoms/button/Button';
+import { CTABanner } from '@/library/components/organisms/cta/CTABanner';
+import { Section } from '@/library/layout/Section';
 
 const Banner = () => (
   <Section>

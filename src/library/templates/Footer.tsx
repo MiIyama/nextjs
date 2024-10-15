@@ -1,10 +1,10 @@
 import Link from 'next/link';
+import React from 'react';
 
-import { Background } from '@/components/atoms/background/Background';
-import { Section } from '@/components/layout/Section';
-
-import { CenteredFooter } from '../organisms/footer/CenteredFooter';
-import { Logo } from './Logo';
+import { Background } from '@/library/components/atoms/background/Background';
+import { CenteredFooter } from '@/library/components/organisms/footer/CenteredFooter';
+import { Section } from '@/library/layout/Section';
+import { Logo } from '@/library/templates/Logo';
 
 const Footer = () => (
   <Background color="bg-gray-100">

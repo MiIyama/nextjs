@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { Section } from '@/components/layout/Section';
+import { Section } from '@/library/layout/Section';
 
 const Sponsors = () => (
   <Section
