@@ -17,7 +17,7 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
     'items-center',
     {
       'flex-row-reverse': props.reverse,
-    },
+    }
   );
 
   const router = useRouter();
