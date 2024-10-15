@@ -1,4 +1,4 @@
-import { AppConfig } from '@/utils/AppConfig';
+import { AppConfig } from '@/content/utils/AppConfig';
 
 const FooterCopyright = () => (
   <div className="footer-copyright">
