@@ -11,8 +11,8 @@ const content = {
     subtitle:'Our comprehensive guide to strategies for entrepreneurs and leaders offers valuable insights, practical advice.',
     buttons: {
       items: [
-        { label: 'Get Started', variant: 'contained' },
-        { label: 'Learn More', variant: 'outlined' },
+        { label: 'Get Started', variant: 'contained'},
+        { label: 'Learn More', variant: 'outlined', endIcon: true  },
       ],
     },
     image: {

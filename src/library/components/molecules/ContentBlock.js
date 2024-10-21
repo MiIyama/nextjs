@@ -25,7 +25,7 @@ const ContentBlock = ({ content }) => {
       element: buttons?.items?.length > 0 && (
         <Stack direction="row" spacing={2}>
           {buttons.items.map((button, idx) => (
-            <Button key={idx} variant={button.variant} color={button.color}>
+            <Button key={idx} variant={button.variant} endIcon={button.endIcon}>
               {button.label}
             </Button>
           ))}

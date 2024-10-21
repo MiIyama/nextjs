@@ -1,9 +1,16 @@
 import PropTypes from 'prop-types';
 import { Button as MUIButton } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-const Button = ({ children, variant, color, onClick, sx }) => {
+const Button = ({ children, variant, color, onClick, endIcon, sx }) => {
   return (
-    <MUIButton variant={variant} color={color} onClick={onClick} sx={{ ...sx }}>
+    <MUIButton
+      variant={variant}
+      color={color}
+      onClick={onClick}
+      endIcon={endIcon ? <ArrowForwardIcon /> : null}
+      sx={{ ...sx }}
+    >
       {children}
     </MUIButton>
   );
