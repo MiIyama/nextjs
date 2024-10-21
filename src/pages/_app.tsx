@@ -5,33 +5,45 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import type { AppProps } from 'next/app';
 import * as React from 'react';
 
-const getDesignTokens = (mode: PaletteMode) => ({
-  palette: {
-    mode,
-    primary: {
-      main: mode === 'light' ? '#3328BF' : '#4D42FF',
+import { getDesignTokens as getCustomDesignTokens } from '@/library/components/tokens/colors';
+import typographyVariants from '@/library/components/tokens/typography';
+
+const getDesignTokens = (mode: PaletteMode) => {
+  const { customColors } = getCustomDesignTokens(mode);
+
+  return {
+    palette: {
+      mode,
+      primary: {
+        main: customColors['brand-colors-600'],
+      },
+      ...customColors,
     },
-  },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          textTransform: 'none',
-          variants: [],
-        },
-        outlined: {
-          backgroundColor: '#FCFCFC',
-          borderColor: '#D6D6D6',
-          color: '#0D0D0D',
-          '&:hover': {
-            backgroundColor: '#f0f0f0',
-            borderColor: '#c0c0c0',
+    typography: {
+      ...typographyVariants,
+      fontFamily: '"Plus Jakarta Sans", sans-serif',
+    },
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            textTransform: 'none',
+            variants: [],
+          },
+          outlined: {
+            backgroundColor: customColors['background-colors-gray-white-bg'],
+            borderColor: customColors['text-colors-200'],
+            color: customColors['text-colors-950'],
+            '&:hover': {
+              backgroundColor: customColors['text-colors-50'],
+              borderColor: customColors['text-colors-500'],
+            },
           },
         },
       },
     },
-  },
-});
+  };
+};
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [mode, setMode] = React.useState<PaletteMode>('light');
@@ -46,12 +58,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <FormControlLabel
-        control={
-          <Switch checked={mode === 'dark'} onChange={handleThemeChange} />
-        }
-        label="Dark Mode"
-      />
+      <FormControlLabel control={<Switch checked={mode === 'dark'} onChange={handleThemeChange} />} label="Dark Mode" />
       <Component {...pageProps} />
     </ThemeProvider>
   );
