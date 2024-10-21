@@ -11,9 +11,9 @@ const Title = ({ children, typography, gutterBottom, sx }) => {
 
 Title.defaultProps = {
   typography: 'h2',
-  gutterBottom: true,
+  // gutterBottom: true,
   sx: {
-    maxWidth: 'unset',
+    // maxWidth: '900px',
   },
 };
 

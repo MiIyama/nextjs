@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 
 const Section = ({ children, sx }) => {
   return (
-    <Box component="section" sx={{ padding: '2rem', ...sx }}>
+    <Box component="section" sx={{ ...sx }}>
       {children}
     </Box>
   );
@@ -16,7 +16,7 @@ Section.propTypes = {
 
 // Definindo valores padrão
 Section.defaultProps = {
-  sx: { backgroundColor: 'secondary.main' },
+  sx: { my: '32px' },
 };
 
 export default Section;

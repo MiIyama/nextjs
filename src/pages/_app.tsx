@@ -9,12 +9,23 @@ const getDesignTokens = (mode: PaletteMode) => ({
   palette: {
     mode,
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          variants: [],
+        },
+      },
+    },
+  },
 });
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [mode, setMode] = React.useState<PaletteMode>('light');
   const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
+  console.log(theme);
   const handleThemeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMode(event.target.checked ? 'dark' : 'light');
   };

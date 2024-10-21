@@ -11,7 +11,7 @@ const Subtitle = ({ children, typography, gutterBottom, sx }) => {
 
 Subtitle.defaultProps = {
   typography: 'subtitle1',
-  gutterBottom: true,
+  // gutterBottom: true,
   sx: {
     maxWidth: 'unset',
   },

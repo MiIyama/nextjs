@@ -1,14 +1,15 @@
-import Container from '@mui/material/Container';
 import React from 'react';
-import Subtitle from '@/library/components/atoms/Subtitle';
-import Title from '@/library/components/atoms/Title';
+import { Container } from '@mui/material';
+import Section from '@/library/components/atoms/Section';
+import ContentBlock from '../molecules/ContentBlock';
 
-const Hero = ({ title, subtitle }) => {
+const Hero = ({ content }) => {
   return (
-    <Container>
-      <Title text={title} />
-      <Subtitle text={subtitle} />
-    </Container>
+    <Section>
+      <Container>
+        <ContentBlock content={content} />
+      </Container>
+    </Section>
   );
 };
 
