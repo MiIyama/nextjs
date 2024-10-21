@@ -16,6 +16,35 @@ const ContentBlock = ({ content }) => {
     image,
   } = content;
 
+  const elements = [
+    { key: 'headerSlot', element: headerSlot && <Box>{headerSlot}</Box> },
+    { key: 'title', element: title && <Title>{title}</Title> },
+    { key: 'subtitle', element: subtitle && <Subtitle>{subtitle}</Subtitle> },
+    {
+      key: 'buttons',
+      element: buttons?.items?.length > 0 && (
+        <Stack direction="row" spacing={2}>
+          {buttons.items.map((button, idx) => (
+            <Button key={idx} variant={button.variant} color={button.color}>
+              {button.label}
+            </Button>
+          ))}
+        </Stack>
+      ),
+    },
+    {
+      key: 'image',
+      element: image && (
+        <Image
+          src={image.src}
+          width={image.width}
+          height={image.height}
+          alt={image.alt}
+        />
+      ),
+    },
+  ];
+
   return (
     <>
       <Box
@@ -44,27 +73,8 @@ const ContentBlock = ({ content }) => {
             minHeight: '100px',
           }}
         >
-          {headerSlot && <Box>{headerSlot}</Box>}
-          <Title>{title}</Title>
-          <Subtitle>{subtitle}</Subtitle>
-
-          {buttons?.items?.length > 0 && (
-            <Stack direction="row" spacing={2}>
-              {buttons.items.map((button, idx) => (
-                <Button key={idx} variant={button.variant} color={button.color}>
-                  {button.label}
-                </Button>
-              ))}
-            </Stack>
-          )}
-
-          {image && (
-            <Image
-              src={image.src}
-              width={image.width}
-              height={image.height}
-              alt={image.alt}
-            />
+          {Object.keys(content).map(
+            (key) => elements.find((element) => element.key === key)?.element
           )}
         </Stack>
       </Box>
@@ -82,8 +92,8 @@ ContentBlock.propTypes = {
         .isRequired,
     }).isRequired,
     headerSlot: PropTypes.node,
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
     buttons: PropTypes.shape({
       items: PropTypes.arrayOf(
         PropTypes.shape({
@@ -98,7 +108,7 @@ ContentBlock.propTypes = {
       width: PropTypes.number.isRequired,
       height: PropTypes.number.isRequired,
       alt: PropTypes.string.isRequired,
-    }).isRequired,
+    }),
   }).isRequired,
 };
 
