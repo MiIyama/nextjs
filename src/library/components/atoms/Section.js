@@ -16,7 +16,7 @@ Section.propTypes = {
 
 // Definindo valores padrão
 Section.defaultProps = {
-  sx: { my: '32px' },
+  sx: { py: '64px', border: '1px solid #000' },
 };
 
 export default Section;

@@ -4,13 +4,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const Button = ({ children, variant, color, onClick, endIcon, sx }) => {
   return (
-    <MUIButton
-      variant={variant}
-      color={color}
-      onClick={onClick}
-      endIcon={endIcon ? <ArrowForwardIcon /> : null}
-      sx={{ ...sx }}
-    >
+    <MUIButton variant={variant} color={color} onClick={onClick} endIcon={endIcon ? <ArrowForwardIcon /> : null} sx={{ ...sx }}>
       {children}
     </MUIButton>
   );
