@@ -1,7 +1,7 @@
 import React from 'react';
 import Subtitle from '@/library/components/atoms/Subtitle';
 import Title from '@/library/components/atoms/Title';
-import { Stack, Box } from '@mui/material';
+import { Stack, Chip } from '@mui/material';
 import Button from '@/library/components/atoms/Button';
 import Image from 'next/image';
 
@@ -16,7 +16,7 @@ const ContentBlock = ({ content }) => {
   } = content;
 
   const elements = [
-    { key: 'headerSlot', element: headerSlot && <Box>{headerSlot}</Box> },
+    { key: 'headerSlot', element: headerSlot && <Chip label={headerSlot.text} color={headerSlot.color} variant={headerSlot.variant} sx={headerSlot.sx} /> },
     {
       key: 'title',
       element: title && (
