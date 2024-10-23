@@ -1,75 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Subtitle from '@/library/components/atoms/Subtitle';
-import Title from '@/library/components/atoms/Title';
-import { Chip, Stack } from '@mui/material';
-import Button from '@/library/components/atoms/Button';
-import Image from 'next/image';
 import TwoColumnLayout from '@/library/layout/TwoColumnLayout';
 import Section from '@/library/components/atoms/Section';
+import ContentBlock from '../molecules/ContentBlock';
 
 const AboutUs = ({ content }) => {
-  const { title, subtitle, rightContent, leftContent } = content;
+  const { rightContent, leftContent } = content;
 
-  const renderElement = (key, element) => {
-    switch (key) {
-      case 'headerSlot':
-        return element && <Chip key={key} label={element.text} color={element.color} variant={element.variant} sx={element.sx} />;
-      case 'title':
-        return (
-          element && (
-            <Title key={key} typography="display-sm-medium" gutterBottom={element.gutterBottom} component="h3" sx={element.sx}>
-              {element.text}
-            </Title>
-          )
-        );
-      case 'subtitle':
-        return (
-          element && (
-            <Subtitle key={key} typography="text-md-regular" gutterBottom={element.gutterBottom} sx={element.sx}>
-              {element.text}
-            </Subtitle>
-          )
-        );
-      case 'buttons':
-        return (
-          element?.items?.length > 0 && (
-            <Stack direction="row" spacing={2} sx={element.sx} key={key}>
-              {element.items.map((button, idx) => (
-                <Button key={idx} variant={button.variant} endIcon={button.endIcon}>
-                  {button.label}
-                </Button>
-              ))}
-            </Stack>
-          )
-        );
-      case 'image':
-        return element && <Image key={key} src={element.src} width={element.width} height={element.height} alt={element.alt} />;
-      default:
-        return null;
-    }
-  };
-
-  const renderColumnContent = (contentColumn) => <Stack>{Object.keys(contentColumn).map((key) => renderElement(key, contentColumn[key]))}</Stack>;
-
-  const rightColumn = renderColumnContent(rightContent);
-  const leftColumn = renderColumnContent(leftContent);
+  const renderContentBlock = (contentBlock) => (
+    <ContentBlock
+      content={{
+        ...contentBlock,
+        title: { ...contentBlock.title, typography: 'display-sm-medium', component: 'h3' },
+        subtitle: { ...contentBlock.subtitle, typography: 'text-md-regular' },
+      }}
+    />
+  );
 
   return (
     <Section>
-      <Stack>
-        {title && (
-          <Title typography="display-lg-medium" gutterBottom={title.gutterBottom} sx={title.sx}>
-            {title.text}
-          </Title>
-        )}
-        {subtitle && (
-          <Subtitle typography={subtitle.typography} gutterBottom={subtitle.gutterBottom} sx={subtitle.sx}>
-            {subtitle.text}
-          </Subtitle>
-        )}
-      </Stack>
-      <TwoColumnLayout leftContent={leftColumn} rightContent={rightColumn} spacing={3} sx={{ mt: '32px' }} />
+      <ContentBlock
+        content={{
+          ...content,
+          title: { ...content.title, typography: 'display-lg-medium', component: 'h2' },
+        }}
+      />
+      <TwoColumnLayout leftContent={renderContentBlock(leftContent)} rightContent={renderContentBlock(rightContent)} spacing={3} sx={{ mt: '32px' }} />
     </Section>
   );
 };

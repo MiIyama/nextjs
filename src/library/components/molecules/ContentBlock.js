@@ -7,35 +7,36 @@ import Button from '@/library/components/atoms/Button';
 import Image from 'next/image';
 
 const ContentBlock = ({ content }) => {
-  const {
-    layout: { direction, justifyContent, alignItems },
-  } = content;
+  const direction = content?.layout?.direction || 'column';
+  const justifyContent = content?.layout?.justifyContent || 'center';
+  const alignItems = content?.layout?.alignItems || 'flex-start';
 
-  const renderElement = (key, element) => {
+  console.log(direction, justifyContent, alignItems);
+  const renderItem = (key, item) => {
     switch (key) {
       case 'headerSlot':
-        return element && <Chip key={key} label={element.text} color={element.color} variant={element.variant} sx={element.sx} />;
+        return item && <Chip key={key} label={item.text} color={item.color} variant={item.variant} sx={item.sx} />;
       case 'title':
         return (
-          element && (
-            <Title key={key} typography={element.typography} gutterBottom={element.gutterBottom} sx={element.sx} component="h1">
-              {element.text}
+          item && (
+            <Title key={key} typography={item.typography} gutterBottom={item.gutterBottom} sx={item.sx} component={item.component}>
+              {item.text}
             </Title>
           )
         );
       case 'subtitle':
         return (
-          element && (
-            <Subtitle key={key} typography={element.typography} gutterBottom={element.gutterBottom} sx={element.sx}>
-              {element.text}
+          item && (
+            <Subtitle key={key} typography={item.typography} gutterBottom={item.gutterBottom} sx={item.sx}>
+              {item.text}
             </Subtitle>
           )
         );
       case 'buttons':
         return (
-          element?.items?.length > 0 && (
-            <Stack key={key} direction="row" spacing={2} sx={element.sx}>
-              {element.items.map((button, idx) => (
+          item?.items?.length > 0 && (
+            <Stack key={key} direction="row" spacing={2} sx={item.sx}>
+              {item.items.map((button, idx) => (
                 <Button key={idx} variant={button.variant} endIcon={button.endIcon}>
                   {button.label}
                 </Button>
@@ -44,7 +45,7 @@ const ContentBlock = ({ content }) => {
           )
         );
       case 'image':
-        return element && <Image key={key} src={element.src} width={element.width} height={element.height} alt={element.alt} />;
+        return item && <Image key={key} src={item.src} width={item.width} height={item.height} alt={item.alt} />;
       default:
         return null;
     }
@@ -61,7 +62,7 @@ const ContentBlock = ({ content }) => {
         minHeight: '100px',
       }}
     >
-      {Object.keys(content).map((key) => renderElement(key, content[key]))}
+      {Object.keys(content).map((key) => renderItem(key, content[key]))}
     </Stack>
   );
 };
