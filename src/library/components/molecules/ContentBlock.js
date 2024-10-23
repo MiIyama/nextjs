@@ -14,11 +14,11 @@ const ContentBlock = ({ content }) => {
   const renderElement = (key, element) => {
     switch (key) {
       case 'headerSlot':
-        return element && <Chip label={element.text} color={element.color} variant={element.variant} sx={element.sx} />;
+        return element && <Chip key={key} label={element.text} color={element.color} variant={element.variant} sx={element.sx} />;
       case 'title':
         return (
           element && (
-            <Title typography={element.typography} gutterBottom={element.gutterBottom} sx={element.sx} component="h1">
+            <Title key={key} typography={element.typography} gutterBottom={element.gutterBottom} sx={element.sx} component="h1">
               {element.text}
             </Title>
           )
@@ -26,7 +26,7 @@ const ContentBlock = ({ content }) => {
       case 'subtitle':
         return (
           element && (
-            <Subtitle typography={element.typography} gutterBottom={element.gutterBottom} sx={element.sx}>
+            <Subtitle key={key} typography={element.typography} gutterBottom={element.gutterBottom} sx={element.sx}>
               {element.text}
             </Subtitle>
           )
@@ -34,7 +34,7 @@ const ContentBlock = ({ content }) => {
       case 'buttons':
         return (
           element?.items?.length > 0 && (
-            <Stack direction="row" spacing={2} sx={element.sx}>
+            <Stack key={key} direction="row" spacing={2} sx={element.sx}>
               {element.items.map((button, idx) => (
                 <Button key={idx} variant={button.variant} endIcon={button.endIcon}>
                   {button.label}
@@ -44,7 +44,7 @@ const ContentBlock = ({ content }) => {
           )
         );
       case 'image':
-        return element && <Image src={element.src} width={element.width} height={element.height} alt={element.alt} />;
+        return element && <Image key={key} src={element.src} width={element.width} height={element.height} alt={element.alt} />;
       default:
         return null;
     }
@@ -96,7 +96,7 @@ ContentBlock.propTypes = {
         PropTypes.shape({
           label: PropTypes.string,
           variant: PropTypes.string,
-          endIcon: PropTypes.node,
+          endIcon: PropTypes.bool,
         })
       ),
       sx: PropTypes.object,
