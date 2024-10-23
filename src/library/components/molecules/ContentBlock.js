@@ -20,7 +20,7 @@ const ContentBlock = ({ content }) => {
     {
       key: 'title',
       element: title && (
-        <Title typography={title.typography} gutterBottom={title.gutterBottom} sx={title.sx}>
+        <Title key="title" typography={title.typography} gutterBottom={title.gutterBottom} sx={title.sx}>
           {title.text}
         </Title>
       ),
@@ -28,7 +28,7 @@ const ContentBlock = ({ content }) => {
     {
       key: 'subtitle',
       element: subtitle && (
-        <Subtitle typography={subtitle.typography} gutterBottom={subtitle.gutterBottom} sx={subtitle.sx}>
+        <Subtitle key="subtitle" typography={subtitle.typography} gutterBottom={subtitle.gutterBottom} sx={subtitle.sx}>
           {subtitle.text}
         </Subtitle>
       ),
@@ -36,7 +36,7 @@ const ContentBlock = ({ content }) => {
     {
       key: 'buttons',
       element: buttons?.items?.length > 0 && (
-        <Stack direction="row" spacing={2} sx={buttons.sx}>
+        <Stack key="buttons" direction="row" spacing={2} sx={buttons.sx}>
           {buttons.items.map((button, idx) => (
             <Button key={idx} variant={button.variant} endIcon={button.endIcon}>
               {button.label}
@@ -47,7 +47,7 @@ const ContentBlock = ({ content }) => {
     },
     {
       key: 'image',
-      element: image && <Image src={image.src} width={image.width} height={image.height} alt={image.alt} />,
+      element: image && <Image key="img" src={image.src} width={image.width} height={image.height} alt={image.alt} />,
     },
   ];
 
