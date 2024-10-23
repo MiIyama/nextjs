@@ -11,7 +11,6 @@ const ContentBlock = ({ content }) => {
   const justifyContent = content?.layout?.justifyContent || 'center';
   const alignItems = content?.layout?.alignItems || 'flex-start';
 
-  console.log(direction, justifyContent, alignItems);
   const renderItem = (key, item) => {
     switch (key) {
       case 'headerSlot':
