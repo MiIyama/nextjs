@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Subtitle from '@/library/components/atoms/Subtitle';
 import Title from '@/library/components/atoms/Title';
-import { Stack, Chip } from '@mui/material';
+import { Chip, Stack } from '@mui/material';
 import Button from '@/library/components/atoms/Button';
 import Image from 'next/image';
+import TwoColumnLayout from '@/library/layout/TwoColumnLayout';
+import Section from '@/library/components/atoms/Section';
 
-const ContentBlock = ({ content }) => {
-  const {
-    layout: { direction, justifyContent, alignItems },
-  } = content;
+const AboutUs = ({ content }) => {
+  const { title, subtitle, rightContent, leftContent } = content;
 
   const renderElement = (key, element) => {
     switch (key) {
@@ -18,7 +18,7 @@ const ContentBlock = ({ content }) => {
       case 'title':
         return (
           element && (
-            <Title typography={element.typography} gutterBottom={element.gutterBottom} sx={element.sx} component="h1">
+            <Title typography="display-sm-medium" gutterBottom={element.gutterBottom} component="h3" sx={element.sx}>
               {element.text}
             </Title>
           )
@@ -26,7 +26,7 @@ const ContentBlock = ({ content }) => {
       case 'subtitle':
         return (
           element && (
-            <Subtitle typography={element.typography} gutterBottom={element.gutterBottom} sx={element.sx}>
+            <Subtitle typography="text-md-regular" gutterBottom={element.gutterBottom} sx={element.sx}>
               {element.text}
             </Subtitle>
           )
@@ -50,64 +50,46 @@ const ContentBlock = ({ content }) => {
     }
   };
 
+  const renderColumnContent = (contentColumn) => <Stack>{Object.keys(contentColumn).map((key) => renderElement(key, contentColumn[key]))}</Stack>;
+
+  const rightColumn = renderColumnContent(rightContent);
+  const leftColumn = renderColumnContent(leftContent);
+
   return (
-    <Stack
-      direction={direction}
-      sx={{
-        justifyContent,
-        alignItems,
-        padding: '0',
-        marginBottom: '20px',
-        minHeight: '100px',
-      }}
-    >
-      {Object.keys(content).map((key) => renderElement(key, content[key]))}
-    </Stack>
+    <Section>
+      <Stack>
+        {title && (
+          <Title typography="display-lg-medium" gutterBottom={title.gutterBottom} sx={title.sx}>
+            {title.text}
+          </Title>
+        )}
+        {subtitle && (
+          <Subtitle typography={subtitle.typography} gutterBottom={subtitle.gutterBottom} sx={subtitle.sx}>
+            {subtitle.text}
+          </Subtitle>
+        )}
+      </Stack>
+      <TwoColumnLayout leftContent={leftColumn} rightContent={rightColumn} spacing={3} sx={{ mt: '32px' }} />
+    </Section>
   );
 };
 
-ContentBlock.propTypes = {
+AboutUs.propTypes = {
   content: PropTypes.shape({
-    layout: PropTypes.shape({
-      direction: PropTypes.string.isRequired,
-      justifyContent: PropTypes.string.isRequired,
-      alignItems: PropTypes.string.isRequired,
-    }).isRequired,
-    headerSlot: PropTypes.shape({
-      text: PropTypes.string,
-      color: PropTypes.string,
-      variant: PropTypes.string,
-      sx: PropTypes.object,
-    }),
     title: PropTypes.shape({
-      text: PropTypes.string,
-      typography: PropTypes.string,
+      text: PropTypes.string.isRequired,
       gutterBottom: PropTypes.bool,
       sx: PropTypes.object,
     }),
     subtitle: PropTypes.shape({
-      text: PropTypes.string,
+      text: PropTypes.string.isRequired,
       typography: PropTypes.string,
       gutterBottom: PropTypes.bool,
       sx: PropTypes.object,
     }),
-    buttons: PropTypes.shape({
-      items: PropTypes.arrayOf(
-        PropTypes.shape({
-          label: PropTypes.string,
-          variant: PropTypes.string,
-          endIcon: PropTypes.node,
-        })
-      ),
-      sx: PropTypes.object,
-    }),
-    image: PropTypes.shape({
-      src: PropTypes.string.isRequired,
-      width: PropTypes.number.isRequired,
-      height: PropTypes.number.isRequired,
-      alt: PropTypes.string.isRequired,
-    }),
+    rightContent: PropTypes.object.isRequired,
+    leftContent: PropTypes.object.isRequired,
   }).isRequired,
 };
 
-export default ContentBlock;
+export default AboutUs;
