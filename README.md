@@ -1,82 +1,97 @@
-```markdown
-[WIP]
+# [WIP] Design System para Landing Pages e Páginas de Marketing
 
-# Design System para Landing Pages e Páginas de Marketing
+Este projeto é um **Design System** criado para facilitar a construção de landing pages e páginas de marketing com foco em **escalabilidade** e **personalização**. Ele utiliza o conceito de **Atomic Design**, permitindo customizações específicas para cada cliente por meio de **tokens de cores**.
 
-Este projeto é um **Design System** criado para facilitar a construção de landing pages e páginas de marketing com foco em **escalabilidade** e **personalização**. Ele utiliza **Atomic Design**, permitindo customizações específicas para cada cliente por meio de tokens de cores.
+---
 
-## Stack utilizada
+## 📦 Stack Utilizada
 
-**Front-end:** React, Next.js, Material UI, TailwindCSS  
-**Back-end:** Node.js
+- **Front-end:** React, Next.js, Material UI, TailwindCSS  
+- **Back-end:** Node.js  
 
-## Demonstração
+---
+
+## 🚀 Demonstração  
 
 Em breve: Insira aqui o link de uma demonstração ao vivo.
 
-## Funcionalidades
+---
 
-- Customização de cores por cliente usando tokens  
-- Margens consistentes com múltiplos de 8px  
-- Componentes reutilizáveis e documentados no Storybook  
-- Layout modular com suporte a `headerSlot` e `footerSlot`
+## ⚙️ Funcionalidades
 
-## Instalação
+- 🎨 Customização de cores por cliente usando tokens  
+- 📏 Margens consistentes em múltiplos de 8px  
+- 🧩 Componentes reutilizáveis e documentados no Storybook  
+- 📐 Layout modular com suporte a `headerSlot` e `footerSlot`  
 
-Instale o projeto com npm:
+---
+
+## 📥 Instalação
+
+Instale o projeto com **npm**:
 
 ```bash
 npm install
 cd nextjs
 ```
 
-## Rodando localmente
+---
 
-Clone o projeto:
+## 🛠️ Rodando Localmente
 
-```bash
-git clone https://github.com/MiIyama/nextjs
-```
+1. **Clone o projeto:**  
 
-Entre no diretório do projeto:
+   ```bash
+   git clone https://github.com/MiIyama/nextjs
+   ```
 
-```bash
-cd nextjs
-```
+2. **Entre no diretório do projeto:**  
 
-Instale as dependências:
+   ```bash
+   cd nextjs
+   ```
 
-```bash
-npm install
-```
+3. **Instale as dependências:**  
 
-Inicie o servidor de desenvolvimento:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-```
+4. **Inicie o servidor de desenvolvimento:**  
 
-Abra o Storybook para visualizar os componentes:
+   ```bash
+   npm run dev
+   ```
 
-```bash
-npm run storybook
-```
+5. **Abra o Storybook para visualizar os componentes:**  
 
-## Roadmap
+   ```bash
+   npm run storybook
+   ```
 
-- Melhorar o suporte para navegadores legados  
-- Adicionar mais componentes para páginas de marketing  
-- Implementar integração com CMS
+---
 
-## Referências
+## 🛣️ Roadmap
+
+- [ ] Melhorar o suporte para navegadores legados  
+- [ ] Adicionar mais componentes para páginas de marketing  
+- [ ] Implementar integração com CMS  
+
+---
+
+## 🔗 Referências
 
 - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)  
-- [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+- [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)  
 
-## Autores
+---
 
-- [@Naomi](https://github.com/MiIyama) 
+## ✨ Autores
 
-## Licença
+- [@Naomi](https://github.com/MiIyama)
 
-[MIT](https://choosealicense.com/licenses/mit/)
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a licença [MIT](https://choosealicense.com/licenses/mit/).
