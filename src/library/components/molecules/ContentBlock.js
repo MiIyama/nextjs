@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Subtitle from '@/library/components/atoms/Subtitle';
 import Title from '@/library/components/atoms/Title';
-import { Stack, Chip } from '@mui/material';
+import { Stack, Chip, Box } from '@mui/material';
 import Button from '@/library/components/atoms/Button';
 import Image from 'next/image';
 
@@ -43,8 +43,48 @@ const ContentBlock = ({ content }) => {
             </Stack>
           )
         );
-      case 'image':
-        return item && <Image key={key} src={item.src} width={item.width} height={item.height} alt={item.alt} />;
+      case 'image': {
+        const fullWidth = item.fullWidth || false;
+        const fullWidthStyles = fullWidth
+          ? {
+              width: {
+                xs: '100vw',
+                lg: '100%',
+              },
+              transform: {
+                xs: 'translateX(-16px)',
+                sm: 'translateX(-24px)',
+                md: 'translateX(-24px)',
+                lg: 'translateX(0)',
+              },
+            }
+          : {
+              width: '100%',
+            };
+        return (
+          item && (
+            <Box
+              sx={{
+                position: 'relative',
+                width: '100%',
+                height: item.height,
+                overflow: 'hidden',
+                ...fullWidthStyles,
+              }}
+            >
+              <Image
+                key={key}
+                src={item.src}
+                alt={item.alt}
+                fill
+                style={{
+                  objectFit: 'cover',
+                }}
+              />
+            </Box>
+          )
+        );
+      }
       default:
         return null;
     }
@@ -72,7 +112,7 @@ ContentBlock.propTypes = {
       direction: PropTypes.string.isRequired,
       justifyContent: PropTypes.string.isRequired,
       alignItems: PropTypes.string.isRequired,
-    }).isRequired,
+    }),
     headerSlot: PropTypes.shape({
       text: PropTypes.string,
       color: PropTypes.string,
@@ -103,9 +143,10 @@ ContentBlock.propTypes = {
     }),
     image: PropTypes.shape({
       src: PropTypes.string.isRequired,
-      width: PropTypes.number.isRequired,
+      width: PropTypes.number,
       height: PropTypes.number.isRequired,
       alt: PropTypes.string.isRequired,
+      fullWidth: PropTypes.bool,
     }),
   }).isRequired,
 };

@@ -9,7 +9,6 @@ const content = {
     leftContent: {
       image: {
         src: 'https://picsum.photos/id/56/3000/2000',
-        width: 400,
         height: 300,
         alt: 'Beautiful Landscape',
       },
@@ -19,7 +18,23 @@ const content = {
         text: 'Business Achievement Mindset',
       },
       subtitle: {
-        text: 'In the context of business, value refers to the benefits or advantages a product, service, or proposition offers to customers or stakeholders.',
+        text: "In the context of business, value refers to the benefits or advantages a product, service, or proposition offers to customers or stakeholders. It's about meeting the needs, solving the problems, or fulfilling the desires of customers in a way that exceeds their expectations and delivers meaningful outcomes.",
+      },
+      buttons: {
+        items: [
+          {
+            label: 'Learn More',
+            variant: 'contained',
+            endIcon: 'a',
+            color: 'primary',
+          },
+        ],
+        sx: { justifyContent: 'flex-start', mt: 3 },
+      },
+    },
+    footerContent: {
+      subtitle: {
+        text: "At its core, transforming dreams into reality begins with a clear vision. It's about envisioning the future you desire and setting goals that align with your dreams. This vision serves as your guiding star, illuminating the path forward. By embracing these keys to personal achievement, you unlock the door to a life of fulfilment.",
       },
     },
   },
@@ -39,9 +54,9 @@ const content = {
     },
     image: {
       src: 'https://picsum.photos/id/56/3000/2000',
-      width: 1260,
-      height: 300,
       alt: 'Random Image',
+      height: 100,
+      fullWidth: true,
     },
   },
 };

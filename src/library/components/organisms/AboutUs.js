@@ -5,7 +5,7 @@ import Section from '@/library/components/atoms/Section';
 import ContentBlock from '../molecules/ContentBlock';
 
 const AboutUs = ({ content }) => {
-  const { rightContent, leftContent } = content;
+  const { rightContent, leftContent, footerContent } = content;
 
   const renderContentBlock = (contentBlock) => (
     <ContentBlock
@@ -26,6 +26,12 @@ const AboutUs = ({ content }) => {
         }}
       />
       <TwoColumnLayout leftContent={renderContentBlock(leftContent)} rightContent={renderContentBlock(rightContent)} spacing={3} sx={{ mt: '32px' }} />
+      <ContentBlock
+        content={{
+          ...footerContent,
+          title: { ...footerContent.title, typography: 'display-xs-medium', component: 'h3' },
+        }}
+      />
     </Section>
   );
 };

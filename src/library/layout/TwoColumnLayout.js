@@ -13,10 +13,26 @@ const TwoColumnLayout = ({
 }) => {
   return (
     <Grid container spacing={spacing} sx={{ ...sx }}>
-      <Grid xs={12} item md={leftProportion} sx={{ border: '1px red solid', ...leftSx }}>
+      <Grid
+        xs={12}
+        item
+        md={leftProportion}
+        sx={{
+          // border: '1px red solid',
+          ...leftSx,
+        }}
+      >
         {leftContent}
       </Grid>
-      <Grid xs={12} item md={rightProportion} sx={{ border: '1px blue solid', ...rightSx }}>
+      <Grid
+        xs={12}
+        item
+        md={rightProportion}
+        sx={{
+          // border: '1px blue solid',
+          ...rightSx,
+        }}
+      >
         {rightContent}
       </Grid>
     </Grid>
