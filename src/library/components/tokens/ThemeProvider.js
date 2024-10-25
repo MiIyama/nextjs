@@ -6,6 +6,7 @@ import { createCustomTheme } from '@/library/components/tokens/theme';
 
 export const CustomThemeProvider = ({ mode, children }) => {
   const theme = useMemo(() => createCustomTheme(mode), [mode]);
+  // eslint-disable-next-line no-console
   console.log(theme);
   return (
     <MuiThemeProvider theme={theme}>
