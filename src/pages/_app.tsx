@@ -7,7 +7,6 @@ export default function MyApp({ Component, pageProps }) {
   const [mode, setMode] = useState('light');
 
   // eslint-disable-next-line no-console
-  console.log(mode);
   const handleThemeChange = (event) => {
     setMode(event.target.checked ? 'dark' : 'light');
   };
