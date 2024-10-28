@@ -1,41 +1,34 @@
 const content = {
   Features: {
+    proportions: [6, 6],
+    itemsPerRow: 2,
     headerSlot: {
-      text: 'Get Success Together!',
+      text: 'xGet Success Together!',
       sx: { color: 'brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
     },
     title: {
-      text: 'Transforming Dreams into Reality',
+      text: 'Transform Dreams into Reality',
     },
     subtitle: {
-      text: 'In the context of business, value refers to the benefits or advantages a product, service, or proposition offers to customers or stakeholders.',
+      text: 'In the context of business, advantages a product, service, or proposition offers to customers or stakeholders.',
     },
     featuresProps: {
       variant: 'simple',
       icon: true,
-      withDivider: true,
-      centerText: true,
+      // withDivider: true,
       iconOnSeparateLine: true,
     },
     items: [
-      {
-        title: 'Identify Core Features',
-        description: 'Start by identifying the core features of the product. These are the functionalities that form the foundation of what the product...',
-      },
-      {
-        title: 'Feature 2',
-        description: 'This is the second feature.',
-      },
-      {
-        title: 'Feature 3',
-        description: 'This is the third feature.',
-      },
+      { title: 'Identify Core Features', description: 'This is the first feature.' },
+      { title: 'Feature 2', description: 'This is the second feature.' },
+      { title: 'Identify Core Features', description: 'This is the third feature.' },
+      { title: 'Feature 4', description: 'This is the fourth feature.' },
+      { title: 'Identify Core Features', description: 'This is the third feature.' },
+      { title: 'Feature 4', description: 'This is the fourth feature.' },
     ],
   },
   AboutUs: {
-    title: {
-      text: 'Transforming Dreams into Reality',
-    },
+    title: { text: 'Transforming Dreams into Reality' },
     subtitle: {
       text: 'In the context of business, value refers to the benefits or advantages a product, service, or proposition offers to customers or stakeholders.',
     },
@@ -47,43 +40,29 @@ const content = {
       },
     },
     rightContent: {
-      title: {
-        text: 'Business Achievement Mindset',
-      },
+      title: { text: 'Business Achievement Mindset' },
       subtitle: {
         text: "In the context of business, value refers to the benefits or advantages a product, service, or proposition offers to customers or stakeholders. It's about meeting the needs, solving the problems, or fulfilling the desires of customers in a way that exceeds their expectations and delivers meaningful outcomes.",
       },
       buttons: {
-        items: [
-          {
-            label: 'Learn More',
-            variant: 'contained',
-            endIcon: 'a',
-            color: 'primary',
-          },
-        ],
+        items: [{ label: 'Learn More', variant: 'contained', endIcon: 'a', color: 'primary' }],
         sx: { justifyContent: 'flex-start', mt: 3 },
       },
     },
     footerContent: {
       subtitle: {
-        text: "At its core, transforming dreams into reality begins with a clear vision. It's about envisioning the future you desire and setting goals that align with your dreams. This vision serves as your guiding star, illuminating the path forward. By embracing these keys to personal achievement, you unlock the door to a life of fulfilment.",
+        text: "At its core, transforming dreams into reality begins with a clear vision. It's about envisioning the future you desire and setting goals that align with your dreams.",
       },
     },
   },
   hero: {
     title: {
       text: 'Adapting and Thriving in a Changing World',
-      sx: {
-        maxWidth: '1150px',
-        mb: 3,
-      },
+      sx: { maxWidth: '1150px', mb: 3 },
     },
     subtitle: {
       text: 'Our comprehensive guide to strategies for entrepreneurs and leaders offers valuable insights, practical advice.',
-      sx: {
-        mb: 5,
-      },
+      sx: { mb: 5 },
     },
     image: {
       src: 'https://picsum.photos/id/56/3000/2000',
