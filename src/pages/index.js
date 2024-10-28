@@ -6,8 +6,8 @@ import Features from '@/library/components/organisms/Features';
 
 const Index = () => (
   <>
-    <Hero content={content.hero} />
-    <AboutUs content={content.AboutUs} />
+    {/* <Hero content={content.hero} />
+    <AboutUs content={content.AboutUs} /> */}
     <Features content={content.Features} />
   </>
 );

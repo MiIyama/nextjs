@@ -8,27 +8,31 @@ const content = {
       text: 'Transforming Dreams into Reality',
     },
     subtitle: {
-      text: 'In the context of business, value refers to the benefits or advantages a product, service, or proposition offers to customers or stakeholders.',
+      text: 'In the context of business, advantages a product, service, or proposition offers to customers or stakeholders.',
     },
     featuresProps: {
-      variant: 'simple',
+      // variant: 'simple',
       icon: true,
       withDivider: true,
-      centerText: true,
+      // centerText: true,
       iconOnSeparateLine: true,
     },
     items: [
       {
         title: 'Identify Core Features',
-        description: 'Start by identifying the core features of the product. These are the functionalities that form the foundation of what the product...',
+        description: 'This is the second feature.',
       },
       {
         title: 'Feature 2',
         description: 'This is the second feature.',
       },
       {
-        title: 'Feature 3',
-        description: 'This is the third feature.',
+        title: 'Identify Core Features',
+        description: 'This is the second feature.',
+      },
+      {
+        title: 'Feature 2',
+        description: 'This is the second feature.',
       },
     ],
   },

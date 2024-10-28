@@ -4,8 +4,8 @@ import { Grid } from '@mui/material';
 const TwoColumnLayout = ({
   leftContent,
   rightContent,
-  leftProportion = 6, // Default: 50%
-  rightProportion = 6, // Default: 50%
+  leftProportion = 4, // Default: 50%
+  rightProportion = 8, // Default: 50%
   spacing = 2,
   leftSx = {}, // `sx` específico para a coluna da esquerda
   rightSx = {},
