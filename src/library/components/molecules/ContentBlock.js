@@ -35,7 +35,7 @@ const ContentBlock = ({ content }) => {
         return (
           item?.items?.length > 0 && (
             <Stack key={key} direction="row" spacing={2} sx={item.sx}>
-              {item.items.map((button, idx) => (
+              {item?.items?.map((button, idx) => (
                 <Button key={idx} variant={button.variant} endIcon={button.endIcon}>
                   {button.label}
                 </Button>
@@ -44,7 +44,7 @@ const ContentBlock = ({ content }) => {
           )
         );
       case 'image': {
-        const fullWidth = item.fullWidth || false;
+        const fullWidth = item?.fullWidth || false;
         const fullWidthStyles = fullWidth
           ? {
               width: {

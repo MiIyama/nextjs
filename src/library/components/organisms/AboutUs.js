@@ -11,8 +11,8 @@ const AboutUs = ({ content }) => {
     <ContentBlock
       content={{
         ...contentBlock,
-        title: { ...contentBlock.title, typography: 'display-sm-medium', component: 'h3' },
-        subtitle: { ...contentBlock.subtitle, typography: 'text-md-regular' },
+        title: { ...contentBlock?.title, typography: 'display-sm-medium', component: 'h3' },
+        subtitle: { ...contentBlock?.subtitle, typography: 'text-md-regular' },
       }}
     />
   );
@@ -22,7 +22,7 @@ const AboutUs = ({ content }) => {
       <ContentBlock
         content={{
           ...content,
-          title: { ...content.title, typography: 'display-lg-medium', component: 'h2' },
+          title: { ...content?.title, typography: 'display-lg-medium', component: 'h2' },
         }}
       />
 
@@ -31,7 +31,7 @@ const AboutUs = ({ content }) => {
       <ContentBlock
         content={{
           ...footerContent,
-          title: { ...footerContent.title, typography: 'display-xs-medium', component: 'h3' },
+          title: { ...footerContent?.title, typography: 'display-xs-medium', component: 'h3' },
         }}
       />
     </Section>

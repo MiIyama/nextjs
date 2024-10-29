@@ -1,15 +1,7 @@
 import content from '@/content/content';
 
-import AboutUs from '@/library/components/organisms/AboutUs';
-import Hero from '@/library/components/organisms/Hero';
-import Features from '@/library/components/organisms/Features';
+import PageBuilder from '@/library/utils/PageBuilder';
 
-const Index = () => (
-  <>
-    <Hero content={content.hero} />
-    <AboutUs content={content.AboutUs} />
-    <Features content={content.Features} />
-  </>
-);
+const Index = () => <PageBuilder pageContent={content} />;
 
 export default Index;
