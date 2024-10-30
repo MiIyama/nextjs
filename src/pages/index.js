@@ -3,12 +3,15 @@ import content from '@/content/content';
 import AboutUs from '@/library/components/organisms/AboutUs';
 import Hero from '@/library/components/organisms/Hero';
 import Features from '@/library/components/organisms/Features';
+import MySlider from '../library/components/atoms/Slider';
 
 const Index = () => (
   <>
-    {/* <Hero content={content.hero} />
-    <AboutUs content={content.AboutUs} /> */}
-    <Features content={content.Features} />
+    {' '}
+    <MySlider />
+    <Hero content={content.hero} />
+    <AboutUs content={content.AboutUs} />
+    {/* <Features content={content.Features} /> */}
   </>
 );
 

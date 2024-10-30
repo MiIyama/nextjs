@@ -38,7 +38,7 @@ const content = {
   },
   AboutUs: {
     title: {
-      text: 'Transforming Dreams into Reality',
+      text: 'Experiences Shared by Our Clients',
     },
     subtitle: {
       text: 'In the context of business, value refers to the benefits or advantages a product, service, or proposition offers to customers or stakeholders.',
