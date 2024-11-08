@@ -48,7 +48,7 @@
     "@storybook/test": "^8.3.6",
     "@types/node": "^20.11.10",
     "@types/react": "^18.2.48",
-    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/eslint-plugin": "^8.13.0",
     "@typescript-eslint/parser": "^6.19.1",
     "autoprefixer": "^10.4.17",
     "chromatic": "^11.14.0",
