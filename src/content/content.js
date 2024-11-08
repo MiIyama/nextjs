@@ -133,6 +133,12 @@ const content = [
     },
   },
   {
+    type: 'AboutUs',
+    title: {
+      text: 'Experiences Shared by Our Clients',
+    },
+  },
+  {
     type: 'Hero',
     props: {
       title: {

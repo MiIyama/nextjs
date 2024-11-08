@@ -33,7 +33,8 @@
     "react": "^18.2.0",
     "react-docgen": "^7.1.0",
     "react-dom": "^18.2.0",
-    "styled-jsx-plugin-postcss": "^4.0.1"
+    "styled-jsx-plugin-postcss": "^4.0.1",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^2.0.2",
