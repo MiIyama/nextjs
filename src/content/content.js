@@ -1,9 +1,65 @@
 const content = [
   {
+    type: 'Services',
+    props: {
+      itemsPerRow: 1,
+      headerSlot: {
+        text: 'Get Success Together!',
+        sx: { color: 'brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
+      },
+      title: {
+        text: 'aTransform Dreams into Reality',
+      },
+      subtitle: {
+        text: 'In the context of business, advantages a product, service, or proposition offers to customers or stakeholders.',
+      },
+      featuresProps: {
+        variant: 'simple',
+        icon: true,
+        imgOnSeparateLine: true,
+      },
+      items: [
+        {
+          title: {
+            text: 'title1',
+          },
+          subtitle: {
+            text: 'subtitle1',
+          },
+          image: {
+            src: 'https://picsum.photos/id/56/3000/2000',
+            height: 300,
+            alt: 'Beautiful Landscape',
+          },
+          buttons: {
+            items: [{ label: 'Learn More1', variant: 'contained', endIcon: 'a', color: 'primary' }],
+            sx: { justifyContent: 'flex-start', mt: 3 },
+          },
+        },
+        {
+          title: {
+            text: 'title2',
+          },
+          subtitle: {
+            text: 'subtitle2',
+          },
+          image: {
+            src: 'https://picsum.photos/id/56/3000/2000',
+            height: 300,
+            alt: 'Beautiful Landscape',
+          },
+          buttons: {
+            items: [{ label: 'Learn More2', variant: 'contained', endIcon: 'a', color: 'primary' }],
+            sx: { justifyContent: 'flex-start', mt: 3 },
+          },
+        },
+      ],
+    },
+  },
+  {
     type: 'Features',
     props: {
-      proportions: [6, 6],
-      itemsPerRow: 2,
+      itemsPerRow: 1,
       headerSlot: {
         text: 'Get Success Together!',
         sx: { color: 'brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
@@ -17,15 +73,62 @@ const content = [
       featuresProps: {
         variant: 'simple',
         icon: true,
-        iconOnSeparateLine: true,
       },
       items: [
-        { title: 'Identify Core Features', description: 'This is the first feature.' },
-        { title: 'Feature 2', description: 'This is the second feature.' },
-        { title: 'Identify Core Features', description: 'This is the third feature.' },
-        { title: 'Feature 4', description: 'This is the fourth feature.' },
-        { title: 'Identify Core Features', description: 'This is the third feature.' },
-        { title: 'Feature 4', description: 'This is the fourth feature.' },
+        {
+          title: 'Identify Core Features',
+          description: 'This is the first feature.',
+          image: {
+            src: 'https://picsum.photos/id/56/3000/2000',
+            height: 300,
+            alt: 'Beautiful Landscape',
+          },
+        },
+        {
+          title: 'Feature 2',
+          description: 'This is the second feature.',
+          image: {
+            src: 'https://picsum.photos/id/56/3000/2000',
+            height: 300,
+            alt: 'Beautiful Landscape',
+          },
+        },
+        {
+          title: 'Identify Core Features',
+          description: 'This is the third feature.',
+          image: {
+            src: 'https://picsum.photos/id/56/3000/2000',
+            height: 300,
+            alt: 'Beautiful Landscape',
+          },
+        },
+        {
+          title: 'Feature 4',
+          description: 'This is the fourth feature.',
+          image: {
+            src: 'https://picsum.photos/id/56/3000/2000',
+            height: 300,
+            alt: 'Beautiful Landscape',
+          },
+        },
+        {
+          title: 'Identify Core Features',
+          description: 'This is the third feature.',
+          image: {
+            src: 'https://picsum.photos/id/56/3000/2000',
+            height: 300,
+            alt: 'Beautiful Landscape',
+          },
+        },
+        {
+          title: 'Feature 4',
+          description: 'This is the fourth feature.',
+          image: {
+            src: 'https://picsum.photos/id/56/3000/2000',
+            height: 300,
+            alt: 'Beautiful Landscape',
+          },
+        },
       ],
     },
   },

@@ -1,14 +1,8 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 
-const loadComponent = (name) => {
-  const components = {
-    Hero: dynamic(() => import('@/library/components/organisms/Hero'), { ssr: false }),
-    AboutUs: dynamic(() => import('@/library/components/organisms/AboutUs'), { ssr: false }),
-    Features: dynamic(() => import('@/library/components/organisms/Features'), { ssr: false }),
-  };
-  return components[name] || null;
-};
+// Função para carregar um componente dinamicamente
+const loadComponent = (name) => dynamic(() => import(`@/library/components/organisms/${name}`), { ssr: false });
 
 const PageBuilder = ({ pageContent }) => {
   const [components, setComponents] = useState([]);
