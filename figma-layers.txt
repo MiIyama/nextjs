@@ -1,231 +1,93 @@
-- Pages
-  - Home Page - 21
-    - Navbar
-    - Hero Sections
-    - Company Logo
-    - About Us
-    - Services 
-    - Why Choose Us
-    - Why Choose Us
-    - Services 
-    - Metrics
-    - Services 
-    - About Us
-    - Footer
-  - Home Page - 20
-    - Navbar
-    - Hero Sections
-    - Why Choose Us
-    - Company Logo
-    - Services 
-    - About Us
-    - About Us/About Us - 46
-    - Testimonial Sections
-    - Why Choose Us
-    - FAQ
-    - Footer
-  - Home Page - 19
-    - Navbar
-    - Hero Sections
-    - About Us
-    - Blog
-    - Features
-    - Testimonial Sections
-    - Blog
-    - Footer
-  - Home Page - 18
-    - Navbar
-    - Hero Sections
-    - About Us
-    - Services 
-    - Company Logo
-    - Blog
-    - Testimonial Sections
-    - Why Choose Us
-    - Services 
-    - FAQ
-    - Footer
-  - Home Page - 17
-    - Navbar
-    - Hero Sections
-    - About Us/About Us - 41
-    - Team
-    - About Us/About Us - 64
-    - Services 
-    - Services 
-    - Services 
-    - Services 
-    - Footer
-  - Home Page - 16
-    - Navbar
-    - Hero Sections
-    - About Us/About Us - 63
-    - Company Logo
-    - Why Choose Us
-    - Features
-    - Services 
-    - Company Logo
-    - Testimonial Sections
-    - Blog
-    - Footer
-  - Home Page - 15
-    - Navbar
-    - Hero Sections
-    - About Us
-    - Services 
-    - About Us/About Us - 54
-    - Services 
-    - Testimonial Sections
-    - Services 
-    - FAQ
-    - Footer
-  - Home Page - 14
-    - Navbar
-    - Hero Sections
-    - Company Logo
-    - About Us
-    - Services 
-    - Pricing Table
-    - Team
-    - Why Choose Us
-    - Metrics
-    - Footer
-  - Home Page - 13
-    - Navbar
-    - Hero Sections
-    - Metrics
-    - Pricing Table
-    - Testimonial Sections
-    - Company Logo
-    - About Us/About Us - 45
-    - Services 
-    - Footer
-  - Home Page - 12
-    - Navbar
-    - Hero Sections
-    - About Us
-    - Services 
-    - Gallery
-    - Testimonial Sections
-    - Company Logo
-    - Team
-    - Blog
-    - FAQ
-    - Footer
-  - Home Page - 11
-    - Navbar
-    - Hero Sections
-    - Company Logo
-    - Why Choose Us
-    - Why Choose Us
-    - Why Choose Us
-    - Why Choose Us
-    - Testimonial Sections
-    - CTA
-    - Footer
-  - Home Page - 10
-    - Navbar
-    - Hero Sections
-    - Services 
-    - About Us
-    - Blog
-    - Testimonial Sections
-    - FAQ/FAQ - 20
-    - CTA
-    - Footer
-  - Home Page - 9
-    - Navbar
-    - Hero Sections
-    - About Us
-    - Services 
-    - Why Choose Us
-    - Team
-    - Testimonial Sections
-    - Company Logo
-    - Blog
-    - Footer
-  - Home Page - 8
-    - Navbar
-    - Hero Sections
-    - About Us/About Us - 56
-    - Features
-    - Services 
-    - Team
-    - Testimonial Sections
-    - CTA
-    - FAQ
-    - Company Logo
-    - Footer
-  - Home Page - 7
-    - Navbar
-    - Hero Sections
-    - Company Logo
-    - Features
-    - Testimonial Sections
-    - Services 
-    - Metrics
-    - Blog
-    - Footer
-  - Home Page - 6
-    - Navbar
-    - Hero Sections
-    - About Us/About Us - 55
-    - Company Logo
-    - About Us
-    - Testimonial Sections
-    - Pricing Table
-    - Portfolio
-    - FAQ
-    - Footer
-  - Home Page - 5
-    - Navbar
-    - Hero Sections
-    - Company Logo
-    - About Us/About Us - 54
-    - Team
-    - Features
-    - Metrics
-    - Team
-    - Blog
-    - Footer
-  - Home Page - 4
-    - Navbar
-    - Hero Sections
-    - Portfolio
-    - Services 
-    - About Us
-    - About Us
-    - Team
-    - Testimonial Sections
-    - Blog
-    - Footer
-  - Home Page - 3
-    - Navbar
-    - Hero Sections
-    - About Us/About Us - 52
-    - About Us
-    - Why Choose Us
-    - FAQ
-    - Company Logo
-    - Metrics
-    - Footer
-  - Home Page - 2
-    - Navbar
-    - Hero Sections
-    - Features
-    - Why Choose Us
-    - Features
-    - Contact Form
-    - Blog
-    - Footer
-  - Home Page - 1
-    - Navbar
-    - Hero Sections
-    - Company Logo
-    - Gallery
-    - About Us
-    - Why Choose Us
-    - About Us
-    - Blog
-    - FAQ
-    - Footer
+90 resultados - Um arquivo
+
+figma-layers.html:,
+https://media-public.canva.com/Jcd1Y/MAEcSuJcd1Y/1/t.png,
+https://media-public.canva.com/vWe58/MAEcSmvWe58/1/t.png,
+https://media-public.canva.com/C4tjg/MAEcSkC4tjg/1/t.png,
+https://media-public.canva.com/jBUEA/MAEcSijBUEA/1/t.png,
+https://media-public.canva.com/WNPm4/MAEcSoWNPm4/1/t.png,
+https://media-public.canva.com/XhcpA/MAEcSkXhcpA/1/t.png,
+https://media-public.canva.com/Dfdmo/MAEcSiDfdmo/1/t.png,
+https://media-public.canva.com/7G34w/MAEcSr7G34w/1/t.png,
+https://media-public.canva.com/7ahn8/MAEcSo7ahn8/1/t.png,
+https://media-public.canva.com/KIOSE/MAEcSlKIOSE/1/t.png,
+https://media-public.canva.com/QL9x8/MAEcSnQL9x8/1/t.png,
+https://media-public.canva.com/2EPkA/MAEcSq2EPkA/1/t.png,
+https://media-public.canva.com/OvCAE/MAEcStOvCAE/1/t.png,
+https://media-public.canva.com/1W3oM/MAEc261W3oM/1/t.png,
+https://media-public.canva.com/XTTmM/MAEc2wXTTmM/1/t.png,
+https://media-public.canva.com/911tY/MAEc20911tY/1/t.png,
+https://media-public.canva.com/Ss6Wc/MAEc2zSs6Wc/1/t.png,
+https://media-public.canva.com/bKg2Q/MAF4vrbKg2Q/1/t.png,
+https://media-public.canva.com/Fwg9g/MAFGIfFwg9g/1/t.png,
+https://media-public.canva.com/dc7pc/MAF4vrdc7pc/1/t.png,
+https://media-public.canva.com/05wiE/MAEwQg05wiE/1/t.png,
+https://media-public.canva.com/inRkE/MAFtGLinRkE/1/t.png,
+https://media-public.canva.com/-nY4A/MAFai5-nY4A/1/t.png,
+https://media-public.canva.com/gR510/MAFai3gR510/1/t.png,
+https://media-public.canva.com/mxPCU/MAFai2mxPCU/1/t.png,
+https://media-public.canva.com/0gn18/MAFai-0gn18/1/t.png,
+https://media-public.canva.com/WYf1w/MAFai4WYf1w/1/t.png,
+https://media-public.canva.com/6bAsk/MAFai76bAsk/1/t.png,
+https://media-public.canva.com/g12wU/MAEJDWg12wU/1/t.png,
+https://media-public.canva.com/KG6J0/MAEJDVKG6J0/1/t.png,
+https://media-public.canva.com/8eQfs/MAEJDU8eQfs/1/t.png,
+https://media-public.canva.com/2Ptmc/MAEJDT2Ptmc/1/t.png,
+https://media-public.canva.com/TfFls/MAEJDVTfFls/1/t.png,
+https://media-public.canva.com/LbbWs/MAEJDbLbbWs/1/t.png,
+https://media-public.canva.com/TfFls/MAEJDVTfFls/1/t.png,
+https://media-public.canva.com/eGQBY/MAEJDQeGQBY/1/t.png,
+https://media-public.canva.com/kACGM/MAEJDUkACGM/1/t.png,
+https://media-public.canva.com/woazA/MAEJDbwoazA/1/t.png,
+https://media-public.canva.com/2Ptmc/MAEJDT2Ptmc/1/t.png,
+https://media-public.canva.com/rKftM/MAEJDXrKftM/1/t.png,
+https://media-public.canva.com/g12wU/MAEJDWg12wU/1/t.png,
+https://media-public.canva.com/KG6J0/MAEJDVKG6J0/1/t.png,
+https://media-public.canva.com/kACGM/MAEJDUkACGM/1/t.png,
+https://media-public.canva.com/KG6J0/MAEJDVKG6J0/1/t.png,
+https://media-public.canva.com/LRBXc/MAEJDULRBXc/1/t.png,
+https://media-public.canva.com/BH8-I/MAEJDWBH8-I/1/t.png,
+https://media-public.canva.com/JM-64/MAEJDfJM-64/1/t.png,
+https://media-public.canva.com/rKftM/MAEJDXrKftM/1/t.png,
+https://media-public.canva.com/OvCAE/MAEcStOvCAE/1/t.png,
+https://media-public.canva.com/3C_Es/MAEcSr3C_Es/1/t.png,
+https://media-public.canva.com/QL9x8/MAEcSnQL9x8/1/t.png,
+https://media-public.canva.com/jUGzE/MAEcSkjUGzE/1/t.png,
+https://media-public.canva.com/MvfJs/MAEcStMvfJs/1/t.png,
+https://media-public.canva.com/jBUEA/MAEcSijBUEA/1/t.png,
+https://media-public.canva.com/JgAU0/MAE_VkJgAU0/1/t.png,
+https://media-public.canva.com/w1cZg/MAE_Viw1cZg/1/t.png,
+https://media-public.canva.com/UX7ws/MAE_VmUX7ws/1/t.png,
+https://media-public.canva.com/fMHbo/MAEcSvfMHbo/1/t.png,
+https://media-public.canva.com/JKtQY/MAEcSkJKtQY/1/t.png,
+https://media-public.canva.com/yTNnA/MAEcSkyTNnA/1/t.png,
+https://media-public.canva.com/K2vp4/MAFxcRK2vp4/1/t.png,
+https://media-public.canva.com/gBo98/MAFxcYgBo98/1/t.png,
+https://media-public.canva.com/LNAL8/MAEcSpLNAL8/1/t.png,
+https://media-public.canva.com/RY430/MAEcSqRY430/1/t.png,
+https://media-public.canva.com/fMHbo/MAEcSvfMHbo/1/t.png,
+https://media-public.canva.com/7UoGI/MAEcSp7UoGI/1/t.png,
+https://media-public.canva.com/Oe3OQ/MAEcSvOe3OQ/1/t.png,
+https://media-public.canva.com/xN78I/MAEcSmxN78I/1/t.png,
+https://media-public.canva.com/JKtQY/MAEcSkJKtQY/1/t.png,
+https://media-public.canva.com/Jcd1Y/MAEcSuJcd1Y/1/t.png,
+https://media-public.canva.com/vWe58/MAEcSmvWe58/1/t.png,
+https://media-public.canva.com/wL898/MAEcSvwL898/1/t.png,
+https://media-public.canva.com/KDybc/MAEcSnKDybc/1/t.png,
+https://media-public.canva.com/fMHbo/MAEcSvfMHbo/1/t.png,
+https://media-public.canva.com/Zrlp0/MAFxcYZrlp0/1/t.png,
+https://media-public.canva.com/gBo98/MAFxcYgBo98/1/t.png,
+https://media-public.canva.com/Cz-cE/MAEcSgCz-cE/1/t.png,
+https://media-public.canva.com/xN78I/MAEcSmxN78I/1/t.png,
+https://media-public.canva.com/aeeQY/MAEcSnaeeQY/1/t.png,
+https://media-public.canva.com/fMHbo/MAEcSvfMHbo/1/t.png,
+https://media-public.canva.com/aeeQY/MAEcSnaeeQY/1/t.png,
+https://media-public.canva.com/4h1SA/MAE3oS4h1SA/1/t.png,
+https://media-public.canva.com/zb6dg/MAFal3zb6dg/1/t.png,
+https://media-public.canva.com/G3ehg/MAFpJXG3ehg/1/t.png,
+https://media-public.canva.com/qAs5A/MAD9dFqAs5A/1/t.png,
+https://media-public.canva.com/Z7VCc/MAFalyZ7VCc/1/t.png,
+https://media-public.canva.com/s5zf0/MAFal7s5zf0/1/t.png,
+https://media-public.canva.com/Hl46k/MAFiUwHl46k/1/t.png,
+https://media-public.canva.com/s5zf0/MAFal7s5zf0/1/t.png,
+https://media-public.canva.com/JKtQY/MAEcSkJKtQY/1/t.pn,g

@@ -35,21 +35,7 @@ const ServicesItem = ({ config = {}, content = {} }) => {
             ))}
           </Stack>
         );
-      case 'image':
-        return (
-          <Box
-            key={key}
-            sx={{
-              position: 'relative',
-              width: '256px',
-              height: '250px',
-              overflow: 'hidden',
-              borderRadius: 3,
-            }}
-          >
-            <Image src={item.src} alt={item.alt} fill style={{ objectFit: 'cover' }} />
-          </Box>
-        );
+
       default:
         return null;
     }
@@ -99,18 +85,36 @@ const ServicesItem = ({ config = {}, content = {} }) => {
             alignItems: centerText ? 'center' : 'flex-start',
           }}
         >
-          <Box
-            key={key}
-            sx={{
-              position: 'relative',
-              width: '256px',
-              height: '250px',
-              overflow: 'hidden',
-              borderRadius: 3,
-            }}
-          >
-            <Image src={item.src} alt={item.alt} fill style={{ objectFit: 'cover' }} />
-          </Box>
+          {content.items &&
+            content.items.map((item, idx) => (
+              <Box
+                key={idx}
+                sx={{
+                  ml: imgOnSeparateLine ? 0 : 1,
+                  mt: imgOnSeparateLine ? 1 : 0,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: centerText ? 'center' : 'flex-start',
+                }}
+              >
+                {item.image && (
+                  <Box
+                    key={`image-${idx}`}
+                    sx={{
+                      position: 'relative',
+                      width: '256px',
+                      height: '250px',
+                      overflow: 'hidden',
+                      borderRadius: 3,
+                    }}
+                  >
+                    aaaa
+                    <Image src={item.image.src} alt={item.image.alt} fill style={{ objectFit: 'cover' }} />
+                  </Box>
+                )}
+                {Object.keys(item).map((key) => renderItem(key, item[key]))}
+              </Box>
+            ))}
           {Object.keys(content || {}).map((key) => renderItem(key, content[key]))}
         </Box>
       </Box>
