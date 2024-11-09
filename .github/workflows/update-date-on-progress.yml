@@ -1,0 +1,22 @@
+name: Update Date on Progress
+
+on:
+  project_card:
+    types: [moved]
+
+jobs:
+  update_date:
+    runs-on: ubuntu-latest
+    if: github.event.project_card.column_name == 'In progress'
+    steps:
+      - name: Atualizar data no card
+        env:
+          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        run: |
+          DATE=$(date '+%Y-%m-%d')
+          CARD_ID=${{ github.event.project_card.id }}
+          curl -X PATCH \
+            -H "Authorization: Bearer $MY_GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/projects/columns/cards/$CARD_ID \
+            -d "{\"note\": \"Data de progresso: $DATE\"}"
