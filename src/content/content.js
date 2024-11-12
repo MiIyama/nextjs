@@ -1,4 +1,37 @@
 const content = {
+  Features: {
+    headerSlot: {
+      text: 'Get Success Together!',
+      sx: { color: 'brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
+    },
+    title: {
+      text: 'Transforming Dreams into Reality',
+    },
+    subtitle: {
+      text: 'In the context of business, value refers to the benefits or advantages a product, service, or proposition offers to customers or stakeholders.',
+    },
+    featuresProps: {
+      variant: 'simple',
+      icon: true,
+      withDivider: true,
+      centerText: true,
+      iconOnSeparateLine: true,
+    },
+    items: [
+      {
+        title: 'Identify Core Features',
+        description: 'Start by identifying the core features of the product. These are the functionalities that form the foundation of what the product...',
+      },
+      {
+        title: 'Feature 2',
+        description: 'This is the second feature.',
+      },
+      {
+        title: 'Feature 3',
+        description: 'This is the third feature.',
+      },
+    ],
+  },
   AboutUs: {
     title: {
       text: 'Transforming Dreams into Reality',
