@@ -9,6 +9,7 @@
     "strict": true,
     "alwaysStrict": true,
     "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
 
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -19,7 +20,7 @@
     "noFallthroughCasesInSwitch": true,
 
     "target": "es5",
-    "outDir": "dist",
+    "outDir": "out",
     "declaration": true,
     "sourceMap": true,
 
@@ -31,8 +32,15 @@
 
     "jsx": "preserve",
     "noEmit": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "incremental": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/public/*": ["./public/*"],
+    },
   },
-  "exclude": ["./dist/**/*", "./node_modules/**/*"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "exclude": ["./out/**/*", "./node_modules/**/*"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
 }

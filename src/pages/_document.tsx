@@ -1,13 +1,13 @@
-import React from 'react';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
-import Document, {
-  Html, Head, Main, NextScript,
-} from 'next/document';
+import { AppConfig } from '@/content/utils/AppConfig';
 
+// Need to create a custom _document because i18n support is not compatible with `next export`.
 class MyDocument extends Document {
+  // eslint-disable-next-line class-methods-use-this
   render() {
     return (
-      <Html lang="en">
+      <Html lang={AppConfig.locale}>
         <Head />
         <body>
           <Main />

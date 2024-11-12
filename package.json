@@ -1,59 +1,61 @@
 {
-  "name": "next-js-boilerplate",
+  "name": "meu-projeto",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next --port 8080",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build-stats": "ANALYZE=true npm run build",
-    "export": "next export -o dist",
-    "build-prod": "run-s clean build export",
-    "clean": "rimraf .next dist",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+    "build-stats": "cross-env ANALYZE=true npm run build",
+    "build-prod": "run-s clean build",
+    "clean": "rimraf .next .swc out",
+    "lint": "next lint",
+    "format": "next lint --fix && prettier --write '**/*.{js,jsx,ts,tsx,json,yaml,css,scss,md}' --ignore-path .gitignore",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "check-types": "tsc --noEmit --pretty",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "@tailwindcss/jit": "^0.1.8",
-    "next": "^10.0.9",
-    "next-seo": "^4.23.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.3",
+    "classnames": "^2.5.1",
+    "next": "^14.1.0",
+    "next-seo": "^6.4.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "styled-jsx-plugin-postcss": "^4.0.1"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^10.0.9",
-    "@types/node": "^14.14.35",
-    "@types/react": "^17.0.3",
-    "@typescript-eslint/eslint-plugin": "^4.19.0",
-    "autoprefixer": "^10.2.5",
-    "eslint": "^7.22.0",
-    "eslint-config-airbnb-typescript": "^12.3.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.23.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^4.3.8",
-    "lint-staged": "^10.5.4",
+    "@next/bundle-analyzer": "^14.1.0",
+    "@types/node": "^20.11.10",
+    "@types/react": "^18.2.48",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "autoprefixer": "^10.4.17",
+    "cross-env": "^7.0.3",
+    "cssnano": "^6.0.3",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-next": "^14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-tailwindcss": "^3.14.1",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.2.8",
-    "prettier": "^2.2.1",
-    "rimraf": "^3.0.2",
-    "tailwindcss": "^2.0.4",
-    "typescript": "^4.2.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "prettier --write",
-      "eslint --fix",
-      "eslint"
-    ],
-    "*.json": [
-      "prettier --write"
-    ]
+    "postcss": "^8.4.33",
+    "prettier": "^3.2.4",
+    "rimraf": "^5.0.5",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
   },
   "license": "ISC"
 }
