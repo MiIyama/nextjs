@@ -1,9 +1,21 @@
-import '../styles/global.css';
+import { FormControlLabel, Switch } from '@mui/material';
+import React, { useState } from 'react';
 
-import type { AppProps } from 'next/app';
+import { CustomThemeProvider } from '@/library/components/tokens/ThemeProvider';
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  <Component {...pageProps} />
-);
+export default function MyApp({ Component, pageProps }) {
+  const [mode, setMode] = useState('light');
 
-export default MyApp;
+  // eslint-disable-next-line no-console
+  console.log(mode);
+  const handleThemeChange = (event) => {
+    setMode(event.target.checked ? 'dark' : 'light');
+  };
+
+  return (
+    <CustomThemeProvider mode={mode}>
+      <FormControlLabel control={<Switch checked={mode === 'dark'} onChange={handleThemeChange} />} label="Dark Mode" />
+      <Component {...pageProps} />
+    </CustomThemeProvider>
+  );
+}
