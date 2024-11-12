@@ -5,9 +5,9 @@ import { Typography } from '@mui/material';
  * O componente `Title` é um wrapper para o componente Typography do Material UI,
  * permitindo customizações através de propriedades como `typography`, `gutterBottom` e `sx`.
  */
-const Title = ({ children, typography, gutterBottom, sx }) => {
+const Title = ({ children, typography, gutterBottom, component, sx }) => {
   return (
-    <Typography gutterBottom={gutterBottom} variant={typography} sx={{ ...sx }}>
+    <Typography gutterBottom={gutterBottom} component={component} variant={typography} sx={{ ...sx }}>
       {children}
     </Typography>
   );
@@ -22,6 +22,7 @@ Title.defaultProps = {
    * @default 'display-2xl-semibold'
    */
   typography: 'display-2xl-semibold',
+  component: 'h2',
 
   /**
    * Define se haverá espaçamento inferior (margem) no componente Typography.

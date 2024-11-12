@@ -1,7 +1,7 @@
 // Title.stories.jsx
 import Title from './Title';
 
-// Configuração do Storybook para o componente Title
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: 'Components/Title',
   component: Title,

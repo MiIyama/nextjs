@@ -1,10 +1,18 @@
 import PropTypes from 'prop-types';
-import { Box } from '@mui/material';
+import { Box, Container } from '@mui/material';
 
 const Section = ({ children, sx }) => {
   return (
     <Box component="section" sx={{ ...sx }}>
-      {children}
+      <Container
+        sx={
+          {
+            // border: '1px solid gray'
+          }
+        }
+      >
+        {children}
+      </Container>
     </Box>
   );
 };
