@@ -5,10 +5,17 @@ import PropTypes from 'prop-types';
 const ColumnLayout = ({ content = [], spacing = 2, proportions = [], sx = {}, columnSx = {} }) => {
   const columns = Math.min(content.length, 3);
 
+  let adjustedProportions = proportions;
+
+  if (proportions.length > columns) {
+    console.warn(`O comprimento do array de proporções (${proportions.length}) excede o número de colunas (${columns}). Ajustando para corresponder ao número de colunas.`);
+    adjustedProportions = proportions.slice(0, columns);
+  }
+
   return (
     <Grid container spacing={spacing} sx={{ ...sx }}>
       {content.map((item, index) => (
-        <Grid key={index} item xs={12} md={proportions[index] || Math.floor(12 / columns)} sx={{ ...columnSx }}>
+        <Grid key={index} item xs={12} md={adjustedProportions[index] || Math.floor(12 / columns)} sx={{ ...columnSx }}>
           {item}
         </Grid>
       ))}
