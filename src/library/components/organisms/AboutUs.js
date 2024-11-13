@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TwoColumnLayout from '@/library/layout/TwoColumnLayout';
 import Section from '@/library/components/atoms/Section';
+import ColumnLayout from '@/library/layout/ColumnLayout';
 import ContentBlock from '../molecules/ContentBlock';
 
 const AboutUs = ({ content }) => {
@@ -25,7 +25,9 @@ const AboutUs = ({ content }) => {
           title: { ...content.title, typography: 'display-lg-medium', component: 'h2' },
         }}
       />
-      <TwoColumnLayout leftContent={renderContentBlock(leftContent)} rightContent={renderContentBlock(rightContent)} spacing={3} sx={{ mt: '32px' }} />
+
+      <ColumnLayout content={[renderContentBlock(leftContent), renderContentBlock(rightContent)]} spacing={1} />
+
       <ContentBlock
         content={{
           ...footerContent,
