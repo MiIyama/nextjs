@@ -1,5 +1,79 @@
 const pageContent = [
   {
+    type: 'Services',
+    props: {
+      itemsPerRow: 1,
+      headerSlot: {
+        text: 'Get Success Together!',
+        sx: { color: 'brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
+      },
+      title: {
+        text: 'Services',
+      },
+      subtitle: {
+        text: 'In the context of business, advantages a product, service, or proposition offers to customers or stakeholders.',
+      },
+      featuresProps: {
+        variant: 'simple',
+        icon: true,
+        imgOnSeparateLine: true,
+      },
+      items: [
+        {
+          title: {
+            text: 'title1',
+          },
+          subtitle: {
+            text: 'subtitle1',
+          },
+          image: {
+            src: 'https://picsum.photos/id/56/3000/2000',
+            height: 300,
+            alt: 'Beautiful Landscape',
+          },
+          buttons: {
+            items: [{ label: 'Learn More1', variant: 'contained', endIcon: 'a', color: 'primary' }],
+            sx: { justifyContent: 'flex-start', mt: 3 },
+          },
+        },
+        {
+          title: {
+            text: 'title2',
+          },
+          subtitle: {
+            text: 'subtitle2',
+          },
+          image: {
+            src: 'https://picsum.photos/id/56/3000/2000',
+            height: 300,
+            alt: 'Beautiful Landscape',
+          },
+          buttons: {
+            items: [{ label: 'Learn More2', variant: 'contained', endIcon: 'a', color: 'primary' }],
+            sx: { justifyContent: 'flex-start', mt: 3 },
+          },
+        },
+        {
+          title: {
+            text: 'title2',
+          },
+          subtitle: {
+            text: 'subtitle2',
+          },
+          image: {
+            src: 'https://picsum.photos/id/56/3000/2000',
+            height: 300,
+            alt: 'Beautiful Landscape',
+          },
+          buttons: {
+            items: [{ label: 'Learn More2', variant: 'contained', endIcon: 'a', color: 'primary' }],
+            sx: { justifyContent: 'flex-start', mt: 3 },
+          },
+        },
+      ],
+    },
+  },
+  {
     type: 'Features',
     props: {
       proportions: [6, 6],
