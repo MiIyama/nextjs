@@ -26,7 +26,7 @@ export const createCustomTheme = (mode) => {
             variants: [],
           },
           outlined: {
-            backgroundColor: customColors['background-colors-gray-white-bg'],
+            borderRadius: 2,
             borderColor: customColors['text-colors-200'],
             color: customColors['text-colors-950'],
             '&:hover': {
