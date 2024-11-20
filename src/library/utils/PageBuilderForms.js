@@ -81,18 +81,36 @@ const SectionEditor = ({ type, data, onChange }) => {
           </Box>
         </>
       ),
-      object: () => (
-        <>
-          <Typography variant="h6">{key} (Objeto)</Typography>
-          <Grid container spacing={1}>
-            {Object.keys(value).map((nestedKey) => (
-              <Grid item key={nestedKey} sx={{ width: 1 }}>
-                <TextField fullWidth label={nestedKey} value={value[nestedKey]} onChange={(e) => handleNestedChange(key, nestedKey, e.target.value)} />
-              </Grid>
-            ))}
-          </Grid>
-        </>
-      ),
+      object: () => {
+        // Função para planificar objetos aninhados
+        const flattenObject = (obj, parentKey = '') => {
+          return Object.entries(obj).reduce((acc, [key, value]) => {
+            const newKey = parentKey ? `${parentKey}.${key}` : key; // Concatena as chaves
+            if (typeof value === 'object' && value !== null) {
+              Object.assign(acc, flattenObject(value, newKey)); // Chama recursivamente para objetos
+            } else {
+              acc[newKey] = value; // Adiciona o valor não-aninhado
+            }
+            return acc;
+          }, {});
+        };
+
+        // Planifica profundamente o valor
+        const flattenedEntries = flattenObject(value);
+
+        return (
+          <>
+            <Typography variant="h6">{key} (Objeto - Totalmente Planificado)</Typography>
+            <Grid container spacing={1}>
+              {Object.keys(flattenedEntries).map((flatKey) => (
+                <Grid item key={flatKey} sx={{ width: 1 }}>
+                  <TextField fullWidth label={flatKey} value={flattenedEntries[flatKey]} onChange={(e) => handleNestedChange(key, flatKey, e.target.value)} />
+                </Grid>
+              ))}
+            </Grid>
+          </>
+        );
+      },
       string: () => (
         <>
           <Typography variant="h6">{key} (String)</Typography>
