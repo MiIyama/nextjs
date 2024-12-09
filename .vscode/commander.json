@@ -1,0 +1,47 @@
+{
+  "packageProcessor": "npm",
+  "commands": {
+    "Run Next": {
+      "command": "npm run dev"
+    },
+    "Git Status": {
+      "command": "git status"
+    },
+    "Git Add All": {
+      "command": "git add ."
+    },
+    "Git Commit": {
+      "command": "read -p 'Enter commit message: ' msg && git commit -m \"$msg\""
+    },
+    "Git Push": {
+      "command": "git push"
+    },
+    "Git Pull": {
+      "command": "git pull"
+    },
+    "Git Checkout": {
+      "command": "read -p 'Enter branch name: ' branch && git checkout \"$branch\""
+    },
+    "Git Merge": {
+      "command": "read -p 'Enter branch to merge: ' branch && git merge \"$branch\""
+    },
+    "Git Reset Last Commit": {
+      "command": "git reset --soft HEAD~1"
+    },
+    "Git Clone": {
+      "command": "read -p 'Enter repository URL: ' url && git clone \"$url\""
+    },
+    "Git Stash": {
+      "command": "git stash"
+    },
+    "Git Stash Apply": {
+      "command": "git stash apply"
+    },
+    "Git Fetch": {
+      "command": "git fetch"
+    },
+    "Git Rebase": {
+      "command": "read -p 'Enter branch to rebase: ' branch && git rebase \"$branch\""
+    }
+  }
+}

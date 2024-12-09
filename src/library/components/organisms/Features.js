@@ -1,6 +1,6 @@
 // Features.jsx
 import { Grid } from '@mui/material';
-import FeaturesItem from '@/library/components/molecules/FeaturesItem';
+import FeaturesIcon from '@/library/components/molecules/FeaturesIcon';
 import Section from '@/library/components/atoms/Section';
 import ColumnLayout from '@/library/layout/ColumnLayout';
 import ContentBlock from '../molecules/ContentBlock';
@@ -11,7 +11,7 @@ const Features = ({ content }) => {
 
   const FeaturesItems = items.map((item, index) => (
     <Grid item xs={12 / itemsPerRow} key={`feature-item-${index}`}>
-      <FeaturesItem title={item.title} description={item.description} config={featuresProps} />
+      <FeaturesIcon title={item.title} description={item.description} config={featuresProps} />
     </Grid>
   ));
 
@@ -33,7 +33,7 @@ const Features = ({ content }) => {
     case 2:
       columnsContent = [
         ContentTitle,
-        <Grid container key="all-items" spacing={1}>
+        <Grid container key="all-items" spacing={4}>
           {FeaturesItems}
         </Grid>,
       ];
