@@ -1,47 +1,47 @@
 {
   "packageProcessor": "npm",
   "commands": {
-    "Run Next": {
-      "command": "npm run dev"
+    "Git": {
+      "command": " "
     },
-    "Git Status": {
+    "- Log": {
+      "command": "git log --oneline"
+    },
+    "- Status": {
       "command": "git status"
     },
-    "Git Add All": {
+    "- Add All": {
       "command": "git add ."
     },
-    "Git Commit": {
-      "command": "read -p 'Enter commit message: ' msg && git commit -m \"$msg\""
+    "- Commit [WIP]": {
+      "command": "git commit -m \"wip\" --no-verify"
     },
-    "Git Push": {
+    "- Push": {
       "command": "git push"
     },
-    "Git Pull": {
+    "- Pull": {
       "command": "git pull"
     },
-    "Git Checkout": {
-      "command": "read -p 'Enter branch name: ' branch && git checkout \"$branch\""
+    "- Checkout Main": {
+      "command": "git checkout main"
     },
-    "Git Merge": {
-      "command": "read -p 'Enter branch to merge: ' branch && git merge \"$branch\""
+    "- Merge Main": {
+      "command": "git merge main"
     },
-    "Git Reset Last Commit": {
+    "- Reset Last Commit": {
       "command": "git reset --soft HEAD~1"
     },
-    "Git Clone": {
-      "command": "read -p 'Enter repository URL: ' url && git clone \"$url\""
-    },
-    "Git Stash": {
+    "- Stash": {
       "command": "git stash"
     },
-    "Git Stash Apply": {
+    "- Stash Apply": {
       "command": "git stash apply"
     },
-    "Git Fetch": {
+    "- Fetch": {
       "command": "git fetch"
     },
-    "Git Rebase": {
-      "command": "read -p 'Enter branch to rebase: ' branch && git rebase \"$branch\""
+    "- Rebase Main": {
+      "command": "git rebase main"
     }
   }
 }
