@@ -12,7 +12,10 @@ export const createCustomTheme = (mode) => {
       primary: {
         main: customColors['brand-colors-600'],
       },
-      ...customColors,
+      text: {
+        icon: mode === 'light' ? 'rgba(0, 0, 0, 0.38)' : 'rgba(255, 255, 255, 0.5)',
+      },
+      custom: { ...customColors },
     },
     typography: {
       ...typographyVariants,
