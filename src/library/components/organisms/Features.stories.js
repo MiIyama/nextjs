@@ -5,14 +5,26 @@ export default {
   title: 'Organisms/Features',
   component: Features,
   argTypes: {
+    items: {
+      control: { type: 'array' },
+    },
     proportions: {
       control: { type: 'array' },
     },
     itemsPerRow: {
       control: { type: 'number' },
     },
-    headerSlot: {
-      control: { type: 'object' },
+    'headerSlot.sx.color': {
+      control: { type: 'select' },
+      options: ['brand-colors-600', 'brand-colors-25'],
+    },
+    'headerSlot.sx.bgcolor': {
+      control: { type: 'select' },
+      options: ['red', 'blue', 'unset'],
+    },
+    'headerSlot.sx.border': {
+      control: { type: 'select' },
+      options: ['2px solid red', 'unset'],
     },
     'featuresProps.variant': {
       control: { type: 'select' },
@@ -23,9 +35,6 @@ export default {
     },
     'featuresProps.iconOnSeparateLine': {
       control: { type: 'boolean' }, // Control booleano
-    },
-    items: {
-      control: { type: 'array' },
     },
   },
 };
@@ -44,11 +53,6 @@ export const Default = {
     subtitle: {
       text: 'In the context of business, advantages a product, service, or proposition offers to customers or stakeholders.',
     },
-    featuresProps: {
-      variant: 'simple',
-      icon: true,
-      iconOnSeparateLine: true,
-    },
     items: [
       { title: 'Identify Core Features', description: 'This is the first feature.' },
       { title: 'Feature 2', description: 'This is the second feature.' },
@@ -62,18 +66,22 @@ export const Default = {
     <Features
       content={{
         ...args,
+        items: args.items,
         proportions: args.proportions,
         itemsPerRow: args.itemsPerRow,
         headerSlot: {
           text: args.headerSlot.text,
-          sx: args['headerSlot.sx'],
+          sx: {
+            color: args['headerSlot.sx.color'],
+            border: args['headerSlot.sx.border'],
+            bgcolor: args['headerSlot.sx.bgcolor'],
+          },
         },
         featuresProps: {
           variant: args['featuresProps.variant'],
           icon: args['featuresProps.icon'],
           iconOnSeparateLine: args['featuresProps.iconOnSeparateLine'],
         },
-        items: args.items,
       }}
     />
   ),
