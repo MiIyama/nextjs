@@ -16,7 +16,7 @@ export default {
     },
     'headerSlot.sx.color': {
       control: { type: 'select' },
-      options: ['brand-colors-600', 'brand-colors-25'],
+      options: ['custom.brand-colors-600', 'custom.brand-colors-25'],
     },
     'headerSlot.sx.bgcolor': {
       control: { type: 'select' },
@@ -28,13 +28,13 @@ export default {
     },
     'featuresProps.variant': {
       control: { type: 'select' },
-      options: ['default', 'highlighted', 'simple'], // Opções disponíveis
+      options: ['default', 'highlighted', 'simple'],
     },
     'featuresProps.icon': {
-      control: { type: 'boolean' }, // Control booleano
+      control: { type: 'boolean' },
     },
     'featuresProps.iconOnSeparateLine': {
-      control: { type: 'boolean' }, // Control booleano
+      control: { type: 'boolean' },
     },
   },
 };
@@ -45,7 +45,7 @@ export const Default = {
     itemsPerRow: 2,
     headerSlot: {
       text: 'Get Success Together!',
-      sx: { color: 'brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
+      sx: { color: 'custom.brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
     },
     title: {
       text: 'Transform Dreams into Reality',
