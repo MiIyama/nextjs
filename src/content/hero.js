@@ -52,7 +52,7 @@ const content = {
   headerSlot: {
     text: 'Get Success Together!',
     variant: "outlined",
-    sx: { color: 'brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
+    sx: { color: 'custom.brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
   },
   title: {
     text: 'Adapting and Thriving in a Changing World',
@@ -114,7 +114,7 @@ const content = {
     },
     headerSlot: {
       text: 'Get Success Together!',
-      sx: { color: 'brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
+      sx: { color: 'custom.brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
     },
     title: {
       text: 'Adapting and Thriving in a Changing World',
@@ -201,7 +201,7 @@ const content = {
     },
     headerSlot: {
       text: 'Get Success Together!',
-      sx: { color: 'brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
+      sx: { color: 'custom.brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
     },
     title: {
       text: 'Adapting and Thriving in a Changing World',
@@ -283,7 +283,7 @@ const content = {
     headerSlot: {
       text: 'Get Success Together!',
       variant: "outlined",
-      sx: { color: 'brand-colors-600', border: '0px solid', typography: 'text-sm-semibold' },
+      sx: { color: 'custom.brand-colors-600', border: '0px solid', typography: 'text-sm-semibold' },
     },
     title: {
       text: 'Adapting and Thriving in a Changing World',

@@ -48,7 +48,7 @@ export const Default = {
         headerSlot: {
           text: args.headerText,
           variant: args.headerVariant,
-          sx: { color: 'brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
+          sx: { color: 'custom.brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
         },
         title: {
           text: args.titleText,

@@ -1,0 +1,12 @@
+{
+    "packageProcessor": "npm",
+    "commands": {
+        "Sample command": {
+            "description": "Sample command to be modified",
+            "command": "echo 'Hello World !'",
+            "environment": {
+                "sample-variable": "foobar"
+            }
+        }
+    }
+}

@@ -5,7 +5,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 const FeaturesItem = ({ title, description, config = {} }) => {
   const { icon = false, variant = 'default', withDivider = false, centerText = false, iconOnSeparateLine = false } = config;
 
-  const renderIcon = icon && <CheckCircleIcon sx={{ my: 'auto', mr: iconOnSeparateLine ? 0 : 1, fontSize: 30, color: 'brand-colors-600' }} />;
+  const renderIcon = icon && <CheckCircleIcon sx={{ my: 'auto', mr: iconOnSeparateLine ? 0 : 1, fontSize: 30, color: 'custom.brand-colors-600' }} />;
 
   const boxStyles = {
     default: {
@@ -15,7 +15,7 @@ const FeaturesItem = ({ title, description, config = {} }) => {
       padding: 2,
     },
     highlighted: {
-      backgroundColor: 'brand-colors-25',
+      backgroundColor: 'custom.brand-colors-25',
       padding: 2,
     },
     simple: {

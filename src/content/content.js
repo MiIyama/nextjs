@@ -6,7 +6,7 @@ const pageContent = [
       itemsPerRow: 2,
       headerSlot: {
         text: 'Get Success Together!',
-        sx: { color: 'brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
+        sx: { color: 'custom.brand-colors-600', border: '2px solid', typography: 'text-sm-semibold' },
       },
       title: {
         text: 'Transform Dreams into Reality',
