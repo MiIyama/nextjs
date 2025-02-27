@@ -35,3 +35,11 @@ local
 .vercel
 
 *storybook.log
+
+/src/content/ex
+
+
+.vscode
+
+config.json
+
