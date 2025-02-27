@@ -55,7 +55,7 @@ const pageData = [
             bottom: '10',
             left: '20',
           },
-          link: { url: '#' },
+          link: { url: 'https://www.conventionalcommits.org/en/v1.0.0/' },
         },
       },
     ],

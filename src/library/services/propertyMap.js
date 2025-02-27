@@ -4,27 +4,20 @@ export const sharedProps = {
     flexDirection: 'flex_direction',
     justifyContent: 'flex_justify_content',
     alignItems: 'flex_align_items',
-    display: 'display',
   },
   style: {
     backgroundColor: 'background_color',
-    padding: 'padding',
-    margin: 'margin',
     borderRadius: 'border_radius',
-    width: 'width',
-    height: 'height',
   },
   text: {
     text: 'editor',
     color: 'title_color',
     size: 'typography_font_size.size',
-    align: 'align',
   },
   button: {
-    text: 'text',
     bgColor: 'background_color',
     textColor: 'button_text_color',
-    borderRadius: 'border_radius.top',
+    borderRadius: 'border_radius',
     padding: 'text_padding',
     link: 'link.url',
   },
@@ -37,7 +30,6 @@ export const sharedProps = {
     text: 'title',
     color: 'title_color',
     size: 'typography_font_size.size',
-    align: 'align',
   },
 };
 
