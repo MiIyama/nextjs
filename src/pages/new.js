@@ -12,6 +12,7 @@ const pageData = [
       flex_justify_content: 'center',
       flex_align_items: 'center',
       background_color: '#FFFFFF',
+      border: '1px solid pink',
       padding: {
         top: '20',
         right: '20',
@@ -120,12 +121,9 @@ const Page = () => {
   return (
     <Box>
       {pageData.map((sectionData, index) => (
-        <>
-          <Box componente="SectionBuilderWrapper" key={index} sx={{ width: '100%', p: '20px', border: '5px solid black' }}>
-            SectionBuilderWrapper
-            <SectionBuilder data={sectionData} />
-          </Box>
-        </>
+        <Box componente="SectionBuilderWrapper" key={index} sx={{ width: '100%', p: '20px', border: '5px solid black' }}>
+          <SectionBuilder data={sectionData} />
+        </Box>
       ))}
     </Box>
   );

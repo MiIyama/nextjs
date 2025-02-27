@@ -34,29 +34,23 @@ const SectionBuilder = ({ data }) => {
 
   return (
     // Renderiza um Box do Material UI com as propriedades processadas
-    <Box componente="SectionBuilder" sx={{ ...parsedData.props, width: '100%', bgcolor: 'blue' }}>
-      SectionBuilder
-      {/* Itera sobre os elementos e renderiza cada um */}{' '}
-      <Box sx={{ width: '100%', padding: '20px', backgroundColor: '#ffcccc' }}>
-        Elements
-        {data.elements.map((element, index) => {
-          // console.log('🔹 Processando ELEMENTO:', element);
+    <Box componente="SectionBuilder" sx={{ ...parsedData.props }}>
+      {/* Itera sobre os elementos e renderiza cada um */}
+      {data.elements.map((element, index) => {
+        // console.log('🔹 Processando ELEMENTO:', element);
 
-          return element.elType === 'widget' ? (
-            // Se o tipo do elemento for 'widget', renderiza o componente correspondente
-            <Box sx={{ border: '1px solid black', mb: 1, bgcolor: 'green' }}>
-              RenderComponent
-              <RenderComponent key={index} data={element} />
-            </Box>
-          ) : (
-            // Se não for 'widget', chama recursivamente o SectionBuilder para renderizar uma subseção
-            <Box>
-              <SectionBuilder key={index} data={element} />
-            </Box>
-          );
-        })}
-      </Box>
-      ;
+        return element.elType === 'widget' ? (
+          // Se o tipo do elemento for 'widget', renderiza o componente correspondente
+          <>
+            <RenderComponent key={index} data={element} />
+          </>
+        ) : (
+          // Se não for 'widget', chama recursivamente o SectionBuilder para renderizar uma subseção
+          <>
+            <SectionBuilder key={index} data={element} />
+          </>
+        );
+      })}
     </Box>
   );
 };

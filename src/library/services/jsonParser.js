@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /* eslint-disable no-console */
 import { propertyMap } from './propertyMap';
 
@@ -12,8 +13,7 @@ const formatSpacingProps = (value) => {
   return typeof value === 'object' ? `${value.top || 0}px ${value.right || 0}px ${value.bottom || 0}px ${value.left || 0}px` : `${value}px`;
 };
 
-// Mapeia automaticamente todas as propriedades do JSON para props do React
-// eslint-disable-next-line import/prefer-default-export
+// Função para mapear as propriedades automaticamente
 export function mapProps(data) {
   console.log('📌 Iniciando processamento de `mapProps` para:', data.elType, '| Tipo:', data.widgetType || 'container');
 
@@ -25,6 +25,7 @@ export function mapProps(data) {
   const settings = data.settings || {};
   const mappedProps = {};
 
+  // 🔹 Novo mapeamento para `widgetType`
   const mapping = data.elType === 'widget' ? propertyMap[data.widgetType] : propertyMap[data.elType];
 
   if (!mapping) {
@@ -32,16 +33,23 @@ export function mapProps(data) {
     return { component: 'Error', props: { message: `Erro: Elemento '${data.elType === 'widget' ? data.widgetType : data.elType}' não reconhecido.` } };
   }
 
+  // 🔹 Adiciona propriedades do JSON para as que são nomeadas de forma diferente
   Object.keys(mapping).forEach((key) => {
     const jsonPath = mapping[key];
     let value = getNestedValue(settings, jsonPath);
 
-    // 🔹 Aplica formatação se a prop for `padding`, `margin` ou `borderRadius`
     if (['padding', 'margin', 'borderRadius'].includes(key)) {
       value = formatSpacingProps(value);
     }
 
     mappedProps[key] = value;
+  });
+
+  // 🔹 Adiciona automaticamente todas as propriedades que já possuem o mesmo nome no JSON
+  Object.keys(settings).forEach((key) => {
+    if (!mappedProps[key]) {
+      mappedProps[key] = settings[key]; // Usa o mesmo nome diretamente
+    }
   });
 
   console.log(`✅ Propriedades finais para '${data.elType}':`, mappedProps);
