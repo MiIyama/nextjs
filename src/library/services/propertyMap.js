@@ -12,10 +12,10 @@ export const sharedProps = {
   text: {
     text: 'editor',
     color: 'title_color',
-    size: 'typography_font_size.size',
+    fontSize: 'typography_font_size.size',
   },
   button: {
-    bgColor: 'background_color',
+    backgroundColor: 'background_color',
     textColor: 'button_text_color',
     borderRadius: 'border_radius',
     padding: 'text_padding',
@@ -29,7 +29,46 @@ export const sharedProps = {
   heading: {
     text: 'title',
     color: 'title_color',
-    size: 'typography_font_size.size',
+    fontSize: 'typography_font_size.size',
+  },
+  image: {
+    src: 'image.url',
+    alt: 'image.alt',
+    size: 'image_size',
+    width: 'width.size',
+  },
+  counter: {
+    endingNumber: 'ending_number',
+    color: 'number_color',
+    numberFontFamily: 'typography_number_font_family',
+    numberFontSize: 'typography_number_font_size.size',
+    numberFontWeight: 'typography_number_font_weight',
+    numberTextTransform: 'typography_number_text_transform',
+    numberTextDecoration: 'typography_number_text_decoration',
+    numberLineHeight: 'typography_number_line_height.size',
+    numberLetterSpacing: 'typography_number_letter_spacing.size',
+    titleColor: 'title_color',
+    titleFontFamily: 'typography_title_font_family',
+    titleFontSize: 'typography_title_font_size.size',
+    titleFontWeight: 'typography_title_font_weight',
+    titleTextTransform: 'typography_title_text_transform',
+    titleTextDecoration: 'typography_title_text_decoration',
+    titleLineHeight: 'typography_title_line_height.size',
+    titleLetterSpacing: 'typography_title_letter_spacing.size',
+    thousandSeparator: 'thousand_separator',
+    startingNumber: 'starting_number',
+  },
+
+  countero: {
+    endingNumber: 'ending_number',
+    color: 'number_color',
+    fontFamily: 'typography_number_font_family',
+    fontSize: 'typography_number_font_size.size',
+    fontWeight: 'typography_number_font_weight',
+    textTransform: 'typography_number_text_transform',
+    textDecoration: 'typography_number_text_decoration',
+    lineHeight: 'typography_number_line_height.size',
+    letterSpacing: 'typography_number_letter_spacing.size',
   },
 };
 
@@ -38,4 +77,6 @@ export const propertyMap = {
   'text-editor': { text: 'editor', ...sharedProps.text },
   button: { ...sharedProps.button },
   container: { ...sharedProps.layout, ...sharedProps.style, ...sharedProps.container },
+  image: { ...sharedProps.image },
+  counter: { ...sharedProps.counter },
 };
