@@ -46,19 +46,11 @@ const Counter = ({ endingNumber, suffix, title, ...props }) => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', ...boxProps }}>
       <Typography sx={numberProps}>
-        {console.log('numberProps', numberProps)}
-
         {endingNumber}
         {suffix}
       </Typography>
 
-      {title && (
-        <Typography sx={titleProps}>
-          {' '}
-          {console.log('titleProps', titleProps)}
-          {title}
-        </Typography>
-      )}
+      {title && <Typography sx={titleProps}>{title}</Typography>}
     </Box>
   );
 };
