@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 
-const ImageComponent = ({ src, alt, size, width, height, objectFit, ...props }) => {
+const ImageComponent = ({ src, alt = '', size, width, height, objectFit, ...props }) => {
   // console.log('📌 Props recebidas:', props || 'Nenhuma propriedade recebida');
 
   // console.log('📌 Props recebidas:', JSON.stringify(props, null, 2));
