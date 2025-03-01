@@ -39,7 +39,7 @@ export const sharedProps = {
   },
   counter: {
     endingNumber: 'ending_number',
-    color: 'number_color',
+    numberColor: 'number_color',
     numberFontFamily: 'typography_number_font_family',
     numberFontSize: 'typography_number_font_size.size',
     numberFontWeight: 'typography_number_font_weight',
@@ -54,7 +54,7 @@ export const sharedProps = {
     titleTextTransform: 'typography_title_text_transform',
     titleTextDecoration: 'typography_title_text_decoration',
     titleLineHeight: 'typography_title_line_height.size',
-    titleLetterSpacing: 'typography_title_letter_spacing.size',
+    titleLetterSpacing: 'typography_title_letter_spacing',
     thousandSeparator: 'thousand_separator',
     startingNumber: 'starting_number',
   },

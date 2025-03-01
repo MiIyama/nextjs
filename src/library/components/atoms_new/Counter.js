@@ -2,44 +2,63 @@ import React from 'react';
 import { Typography, Box } from '@mui/material';
 
 const Counter = ({ endingNumber, suffix, title, ...props }) => {
-  const isTitleProp = (key) => key.toLowerCase().includes('title_');
-  const isNumberProp = (key) => key.toLowerCase().includes('number_');
+  const toCamelCase = (str) => str.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
 
-  const titleProps = Object.keys(props)
-    .filter((key) => isTitleProp(key))
-    .reduce((obj, key) => ({ ...obj, [key.replace(/^typography_title_/, '').toLowerCase()]: props[key] }), {});
+  const isTitleProp = (key) => key.startsWith('title');
+  const isNumberProp = (key) => key.startsWith('number');
 
-  const numberProps = Object.keys(props)
-    .filter((key) => isNumberProp(key))
-    .reduce((obj, key) => ({ ...obj, [key.replace(/^typography_number_/, '').toLowerCase()]: props[key] }), {});
+  const cleanProps = (obj) =>
+    Object.keys(obj)
+      .filter((key) => !key.startsWith('_')) // Remove propriedades que começam com "_"
+      .reduce((newObj, key) => ({ ...newObj, [key]: obj[key] }), {});
 
-  const boxProps = Object.keys(props)
-    .filter((key) => !isTitleProp(key) && !isNumberProp(key))
-    .reduce((obj, key) => ({ ...obj, [key]: props[key] }), {});
+  const processProps = (obj, prefix) =>
+    cleanProps(
+      Object.keys(obj)
+        .filter((key) => key.startsWith(prefix))
+        .reduce((acc, key) => {
+          const newKey = key.replace(new RegExp(`^${prefix}_?`), '');
+          const camelKey = toCamelCase(newKey.charAt(0).toLowerCase() + newKey.slice(1));
 
-  const convertToCssProps = (cssProps) => {
-    return {
-      color: cssProps.color,
-      fontFamily: cssProps.font_family,
-      fontSize: cssProps.font_size ? `${cssProps.font_size.size}px` : undefined,
-      fontWeight: cssProps.font_weight,
-      textTransform: cssProps.text_transform,
-      textDecoration: cssProps.text_decoration,
-      lineHeight: cssProps.line_height ? `${cssProps.line_height.size}em` : undefined,
-      letterSpacing: cssProps.letter_spacing ? `${cssProps.letter_spacing.size}em` : undefined,
-      padding: cssProps.padding,
-      width: cssProps.element_width ? `${cssProps.element_width}%` : undefined,
-      zIndex: cssProps.z_index,
-    };
-  };
+          let value = obj[key];
+
+          // 🔹 Aplicar conversão apenas para letterSpacing
+          if (camelKey === 'letterSpacing' && typeof value === 'object' && value.size !== undefined) {
+            value = value.size;
+          }
+
+          return { ...acc, [camelKey]: value };
+        }, {})
+    );
+
+  const titleProps = processProps(props, 'title');
+  const numberProps = processProps(props, 'number');
+
+  const boxProps = cleanProps(
+    Object.keys(props)
+      .filter((key) => !isTitleProp(key) && !isNumberProp(key))
+      .reduce((obj, key) => {
+        const camelKey = toCamelCase(key);
+        return { ...obj, [camelKey]: props[key] };
+      }, {})
+  );
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', ...boxProps }}>
-      <Typography sx={convertToCssProps(numberProps)}>
+      <Typography sx={numberProps}>
+        {console.log('numberProps', numberProps)}
+
         {endingNumber}
         {suffix}
       </Typography>
-      {title && <Typography sx={convertToCssProps(titleProps)}>{title}</Typography>}
+
+      {title && (
+        <Typography sx={titleProps}>
+          {' '}
+          {console.log('titleProps', titleProps)}
+          {title}
+        </Typography>
+      )}
     </Box>
   );
 };
