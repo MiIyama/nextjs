@@ -33,14 +33,19 @@ const SectionBuilder = ({ data }) => {
   if (!parsedData) return null;
 
   log.component('SectionBuilder', '✅ Props do CONTAINER após mapProps:', parsedData.props);
-
   return (
-    <Box componente="SectionBuilder" sx={{ ...parsedData.props }}>
-      {data.elements.map((element, index) => {
-        log.component('SectionBuilder', '🔹 Processando ELEMENTO:', element);
+    <Box data-function="SectionBuilder" data-componente={parsedData.component} sx={{ ...parsedData.props }}>
+      <Box>
+        {data.elements.map((element, index) => {
+          log.component('SectionBuilder', '🔹 Processando ELEMENTO:', element);
 
-        return element.elType === 'widget' ? <RenderComponent key={index} data={element} /> : <SectionBuilder key={index} data={element} />;
-      })}
+          return (
+            <Box data-componente={element.elType === 'widget' ? element.widgetType : 'container? ----'} key={index}>
+              {element.elType === 'widget' ? <RenderComponent data={element} /> : <SectionBuilder data={element} />}
+            </Box>
+          );
+        })}
+      </Box>
     </Box>
   );
 };

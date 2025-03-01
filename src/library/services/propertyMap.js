@@ -7,7 +7,7 @@ export const sharedProps = {
   },
   style: {
     backgroundColor: 'background_color',
-    borderRadius: 'border_radius',
+    borderRadius: '_border_radius',
   },
   text: {
     text: 'editor',
@@ -58,17 +58,68 @@ export const sharedProps = {
     thousandSeparator: 'thousand_separator',
     startingNumber: 'starting_number',
   },
+  iconBox: {
+    // 📌 Card
+    padding: '_padding',
+    paddingTablet: '_padding_tablet',
+    paddingMobile: '_padding_mobile',
+    elementWidth: '_element_width',
+    elementWidthMobile: '_element_width_mobile',
+    elementCustomWidth: '_element_custom_width.size',
+    elementCustomWidthMobile: '_element_custom_width_mobile.size',
+    borderBorder: '_border_border',
+    borderWidth: '_border_width',
+    borderColor: '_border_color',
+    borderRadius: '_border_radius',
+    title: '_title',
+    zIndex: '_z_index',
 
-  countero: {
-    endingNumber: 'ending_number',
-    color: 'number_color',
-    fontFamily: 'typography_number_font_family',
-    fontSize: 'typography_number_font_size.size',
-    fontWeight: 'typography_number_font_weight',
-    textTransform: 'typography_number_text_transform',
-    textDecoration: 'typography_number_text_decoration',
-    lineHeight: 'typography_number_line_height.size',
-    letterSpacing: 'typography_number_letter_spacing.size',
+    // 📝 Descrição
+    descriptionText: 'description_text',
+    descriptionColor: 'description_color',
+    descriptionTypography: 'description_typography_typography',
+    descriptionFontFamily: 'description_typography_font_family',
+    descriptionFontStyle: 'description_typography_font_style',
+    descriptionFontSize: 'description_typography_font_size.size',
+    descriptionFontSizeTablet: 'description_typography_font_size_tablet.size',
+    descriptionFontSizeMobile: 'description_typography_font_size_mobile.size',
+    descriptionFontWeight: 'description_typography_font_weight',
+    descriptionTextTransform: 'description_typography_text_transform',
+    descriptionTextDecoration: 'description_typography_text_decoration',
+    descriptionLineHeight: 'description_typography_line_height.size',
+    descriptionLineHeightTablet: 'description_typography_line_height_tablet.size',
+    descriptionLineHeightMobile: 'description_typography_line_height_mobile.size',
+    descriptionLetterSpacing: 'description_typography_letter_spacing.size',
+
+    // 🎭 Ícone
+    selectedIcon: 'selected_icon.value.url',
+    selectedIconLibrary: 'selected_icon.library',
+    primaryColor: 'primary_color',
+    iconSize: 'icon_size.size',
+    rotate: 'rotate.size',
+    iconSpace: 'icon_space.size',
+    iconAlign: 'icon_align', // 🔹 Mantendo nome original
+    iconIndent: 'icon_indent.size', // 🔹 Mantendo nome original
+
+    // 📌 Texto
+    titleText: 'title_text',
+    titleColor: 'title_color',
+    titleSize: 'title_size',
+    textAlign: 'text_align',
+    titleBottomSpace: 'title_bottom_space.size',
+    titleTypography: 'title_typography_typography',
+    titleFontFamily: 'title_typography_font_family',
+    titleFontStyle: 'title_typography_font_style',
+    titleFontSize: 'title_typography_font_size.size',
+    titleFontSizeTablet: 'title_typography_font_size_tablet.size',
+    titleFontSizeMobile: 'title_typography_font_size_mobile.size',
+    titleFontWeight: 'title_typography_font_weight',
+    titleTextTransform: 'title_typography_text_transform',
+    titleTextDecoration: 'title_typography_text_decoration',
+    titleLineHeight: 'title_typography_line_height.size',
+    titleLineHeightTablet: 'title_typography_line_height_tablet.size',
+    titleLineHeightMobile: 'title_typography_line_height_mobile.size',
+    titleLetterSpacing: 'title_typography_letter_spacing.size',
   },
 };
 
@@ -79,4 +130,5 @@ export const propertyMap = {
   container: { ...sharedProps.layout, ...sharedProps.style, ...sharedProps.container },
   image: { ...sharedProps.image },
   counter: { ...sharedProps.counter },
+  'icon-box': { ...sharedProps.iconBox },
 };

@@ -7,7 +7,7 @@ const Page = () => {
   return (
     <Box>
       {pageData.map((sectionData, index) => (
-        <Box componente="SectionBuilderWrapper" key={index} sx={{ width: '100%', p: '20px', border: '5px solid black' }}>
+        <Box data-function="SectionBuilderWrapper" key={index} sx={{ width: '100%', p: '20px', border: '5px solid black' }}>
           <SectionBuilder data={sectionData} />
         </Box>
       ))}
