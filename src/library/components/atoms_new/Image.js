@@ -8,7 +8,7 @@ const ImageComponent = ({ image, alt = '', size, width, height, objectFit, ...pr
   // console.log('📌 Props recebidas:', JSON.stringify(props, null, 2));
   // console.log('📌 Todas as props separadas:', { src, alt, width, height, size, objectFit });
   if (!image) return null;
-  return <Image src={image} alt={alt} width={width.size} height={height || 10} layout={size === 'full' ? 'responsive' : 'intrinsic'} {...props} />;
+  return <Image src={image} alt={alt} width={width.size || 100} height={100} layout={size === 'full' ? 'responsive' : 'intrinsic'} {...props} />;
 
   // return (
   //   <Box sx={{ position: 'relative', width, height }}>

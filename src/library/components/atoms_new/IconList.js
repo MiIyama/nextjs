@@ -10,7 +10,7 @@ const IconList = ({ textProps, textColor, textIndent, iconColor, iconSize, iconL
         <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: textIndent }}>
           {item.selected_icon?.value?.url && (
             <Box sx={{ color: iconColor }}>
-              <Image src={item.selected_icon.value.url} width={100} height={20} />
+              <Image src={item.selected_icon.value.url} width={30} height={30} />
             </Box>
           )}
 
