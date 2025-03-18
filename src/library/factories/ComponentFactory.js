@@ -9,6 +9,7 @@ const componentNameMap = {
   image: 'Image',
   counter: 'Counter',
   'icon-box': 'IconBox',
+  testimonial: 'Testimonial',
 };
 
 // 🔹 Função que carrega dinamicamente todos os componentes da pasta "atoms_new"
