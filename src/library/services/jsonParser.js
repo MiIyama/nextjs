@@ -73,6 +73,7 @@ const prefixMap = {
     testimonial: false,
     element_custom: false, // 🔹 Remove "element_", mas mantém na raiz
   },
+  'icon-list': { icon_typography: 'textProps' },
 };
 
 /**
@@ -85,7 +86,7 @@ const keyMap = {
   flex_direction: 'flexDirection',
 
   // flex_align_items: 'alignItems',
-  _title: 'component',
+  _title: 'componentName',
 };
 
 /**

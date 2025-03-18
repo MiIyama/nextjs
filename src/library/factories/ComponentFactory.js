@@ -4,12 +4,13 @@ import dynamic from 'next/dynamic';
 // 🔹 Mapeamento de nomes do JSON para os arquivos reais dos componentes
 const componentNameMap = {
   heading: 'Heading',
+  image: 'Image',
   'text-editor': 'Text',
   button: 'Button',
-  image: 'Image',
   counter: 'Counter',
   'icon-box': 'IconBox',
   testimonial: 'Testimonial',
+  'icon-list': 'IconList',
 };
 
 // 🔹 Função que carrega dinamicamente todos os componentes da pasta "atoms_new"
