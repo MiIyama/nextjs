@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button as MuiButton } from '@mui/material';
 
-const Button = ({ text, ...props }) => {
+const Button = ({ text, link, ...props }) => {
   return (
-    <MuiButton variant="contained" {...props}>
+    <MuiButton href={link} variant="contained" sx={{ ...props }}>
       {text}
     </MuiButton>
   );

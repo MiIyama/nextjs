@@ -1,11 +1,11 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 
-const Heading = ({ text, ...props }) => {
+const Heading = ({ title, ...props }) => {
   return (
     <Typography variant="h4" {...props}>
       {/* conferir se o variant está correto */}
-      {text}
+      {title}
     </Typography>
   );
 };

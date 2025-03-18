@@ -2,13 +2,13 @@ import React from 'react';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 
-const ImageComponent = ({ src, alt = '', size, width, height, objectFit, ...props }) => {
+const ImageComponent = ({ image, alt = '', size, width, height, objectFit, ...props }) => {
   // console.log('📌 Props recebidas:', props || 'Nenhuma propriedade recebida');
 
   // console.log('📌 Props recebidas:', JSON.stringify(props, null, 2));
   // console.log('📌 Todas as props separadas:', { src, alt, width, height, size, objectFit });
-  if (!src) return null;
-  return <Image src={src} alt={alt} width={width} height={width} layout={size === 'full' ? 'responsive' : 'intrinsic'} {...props} />;
+  if (!image) return null;
+  return <Image src={image} alt={alt} width={width.size} height={height || 10} layout={size === 'full' ? 'responsive' : 'intrinsic'} {...props} />;
 
   // return (
   //   <Box sx={{ position: 'relative', width, height }}>

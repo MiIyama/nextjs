@@ -1,65 +1,174 @@
 /* eslint-disable import/prefer-default-export */
-/* eslint-disable no-console */
-import { propertyMap } from './propertyMap';
 
-// Função para acessar propriedades aninhadas dinamicamente
-const getNestedValue = (obj, path) => {
-  return path.split('.').reduce((acc, key) => {
-    return acc && acc[key] ? acc[key] : undefined;
-  }, obj);
-};
-
-// Converte padding/margin/borderRadius para formato correto no MUI
+/**
+ * Converte valores de padding/margin/borderRadius para um formato compatível com o MUI.
+ * @param {Object|string} value - O valor a ser formatado.
+ * @returns {string} - Valor formatado corretamente.
+ */
 const formatSpacingProps = (value) => {
   if (!value) return '0px';
   return typeof value === 'object' ? `${value.top || 0}px ${value.right || 0}px ${value.bottom || 0}px ${value.left || 0}px` : `${value}px`;
 };
 
-// 🔧 Função para priorizar camelCase e evitar duplicações
-const ensureCamelCase = (key) => key.replace(/^_/, '').replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
-
-const removeDuplicates = (props, key, value) => {
-  const camelKey = ensureCamelCase(key);
-
-  // 🔹 Se já existe a propriedade em camelCase, não adicionamos outra versão
-  if (!props[camelKey]) {
-    return { ...props, [camelKey]: value }; // Sempre adicionamos camelCase
+/**
+ * Transforma valores que seguem o padrão `{ unit: ..., size: ... }` em uma string `size + unit`.
+ * @param {any} value - O valor a ser formatado.
+ * @returns {any} - Retorna o valor formatado ou o original se não for do tipo esperado.
+ */
+const formatSizeUnit = (value) => {
+  if (typeof value === 'object' && value !== null && 'size' in value && 'unit' in value) {
+    return `${value.size}${value.unit}`;
   }
-  return props;
+  return value;
 };
 
-// Função para mapear as propriedades automaticamente
+/**
+ * Define como tratar cada prefixo, separado por componente.
+ * Se o valor for um **string**, as propriedades serão agrupadas neste nome.
+ * Se o valor for `false`, o prefixo será removido, **mas a propriedade ficará na raiz**.
+ * @type {Object}
+ */
+const prefixMap = {
+  counter: {
+    typography_title: 'titleProps',
+    title: 'titleProps',
+    typography_number: 'numberProps',
+    number: 'numberProps',
+    element: false, // 🔹 Remove "element_", mas mantém na raiz
+    _custom: false, // 🔹 Remove "_custom_", mas mantém na raiz
+  },
+  heading: { title: false, typography: false },
+  container: {
+    content: false,
+    flex: false, // 🔹 Remove "_global_", mas mantém na raiz
+  },
+  'text-editor': {
+    text: false,
+    typography: false,
+  },
+  button: {
+    button_text: false,
+    text: false,
+  },
+  'icon-box': {
+    description_typography: 'descriptionProps',
+    description: 'descriptionProps',
+    selected: 'iconProps',
+    title_typography: 'titleProps',
+    title: 'titleProps',
+    icon: 'iconProps',
+    element: false, // 🔹 Remove "element_", mas mantém na raiz
+  },
+  testimonial: {
+    content_content: 'contentProps',
+    content_typography: 'contentProps',
+    name_typography: 'nameProps',
+    job_typography: 'jobProps',
+    content: 'contentProps',
+    name_text: 'nameProps',
+    name: 'nameProps',
+    job_text: 'jobProps',
+    job: 'jobProps',
+    testimonial_image: 'imageProps',
+    testimonial: false,
+    element_custom: false, // 🔹 Remove "element_", mas mantém na raiz
+  },
+};
+
+/**
+ * Mapeamento de chaves para `camelCase` e substituições específicas.
+ * Agora, o `keyMap` é aplicado **antes de remover o `_`** para garantir que as propriedades sejam renomeadas corretamente.
+ * @type {Object}
+ */
+const keyMap = {
+  // text: 'title',
+  flex_direction: 'flexDirection',
+
+  // flex_align_items: 'alignItems',
+  _title: 'component',
+};
+
+/**
+ * Converte os dados de um JSON para um formato estruturado de componentes e propriedades.
+ * Detecta automaticamente o tipo do widget e separa as propriedades com base nos prefixos definidos.
+ * @param {Object} data - Objeto JSON contendo as configurações do componente.
+ * @returns {Object} - Objeto formatado com `component` e `props`.
+ */
 export function mapProps(data) {
+  // console.log('=================================');
+  // console.log('📌 Dados recebidos:', JSON.stringify(data, null, 2));
+
   if (!data || !data.elType) {
+    // console.error('❌ Erro: `elType` não encontrado no JSON.');
     return { component: 'Error', props: { message: 'Erro: `elType` não encontrado no JSON.' } };
   }
 
   const settings = data.settings || {};
-  let mappedProps = {}; // 🔹 Alteramos para let para permitir atualizações seguras
+  let mappedProps = {};
 
-  // 🔹 Verificação de Mapeamento no propertyMap
-  const mapping = data.elType === 'widget' ? propertyMap[data.widgetType] : propertyMap[data.elType];
+  const componentType = data.elType === 'widget' ? data.widgetType : data.elType;
+  const validPrefixes = prefixMap[componentType] || {};
 
-  if (mapping) {
-    Object.keys(mapping).forEach((key) => {
-      const jsonPath = mapping[key];
-      let value = getNestedValue(settings, jsonPath);
+  // console.log('📌 Tipo de Componente:', componentType);
+  // console.log('📌 Prefixos configurados:', validPrefixes);
 
-      if (['padding', 'margin', 'borderRadius'].includes(key)) {
-        value = formatSpacingProps(value);
+  function transformKeys(obj) {
+    return Object.entries(obj).reduce((acc, [key, value]) => {
+      // console.log('\n🔹 Processando chave:', key, '➡️ Valor:', value);
+
+      // 🔹 Primeiro, aplicamos o `keyMap`, antes de qualquer outra transformação
+      const mappedKey = keyMap[key] || key;
+      // console.log('  🔄 Após aplicar `keyMap` (se existir):', mappedKey);
+
+      let transformedKey = mappedKey.replace(/^_/, ''); // 🔹 Remove o `_` inicial
+
+      // Verifica se a chave tem um prefixo listado no `prefixMap`
+      let prefixGroup = null;
+      Object.keys(validPrefixes).forEach((prefix) => {
+        if (transformedKey.startsWith(`${prefix}_`)) {
+          transformedKey = transformedKey.replace(`${prefix}_`, ''); // Remove o prefixo
+          prefixGroup = validPrefixes[prefix]; // Define o nome do grupo ou `false`
+        }
+      });
+
+      // console.log('  🔄 Após remover `_` e prefixo:', transformedKey);
+
+      // Converte a chave transformada para camelCase
+      const newKey = transformedKey.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
+      // console.log('  🔄 CamelCase aplicado:', newKey);
+
+      // 🔹 Aplica a formatação para objetos `{ size, unit }`
+      const formattedValue = formatSizeUnit(value);
+
+      if (prefixGroup === false) {
+        // 🔹 Se `prefixGroup === false`, deixamos a propriedade na raiz
+        acc[newKey] = ['padding', 'margin', 'borderRadius'].includes(newKey) ? formatSpacingProps(formattedValue) : formattedValue;
+
+        // console.log(`  ✅ Prefixo removido e mantido na raiz ➝ ${newKey}:`, formattedValue);
+      } else if (prefixGroup) {
+        // 🔹 Se `prefixGroup` for um nome válido, agrupamos normalmente
+        if (!acc[prefixGroup]) acc[prefixGroup] = {};
+
+        acc[prefixGroup][newKey] = ['padding', 'margin', 'borderRadius'].includes(newKey) ? formatSpacingProps(formattedValue) : formattedValue;
+
+        // console.log(`  ✅ Adicionado no grupo "${prefixGroup}" ➝ ${newKey}:`, formattedValue);
+      } else {
+        // 🔹 Se não for um prefixo listado, apenas adicionamos normalmente
+        acc[newKey] = ['padding', 'margin', 'borderRadius'].includes(newKey) ? formatSpacingProps(formattedValue) : formattedValue;
+
+        // console.log(`  ✅ Adicionado na raiz ➝ ${newKey}:`, formattedValue);
       }
 
-      mappedProps = removeDuplicates(mappedProps, key, value);
-    });
+      return acc;
+    }, {});
   }
 
-  // 🔹 Adiciona automaticamente todas as propriedades do JSON, mas evita duplicação
-  Object.keys(settings).forEach((key) => {
-    mappedProps = removeDuplicates(mappedProps, key, settings[key]);
-  });
+  mappedProps = transformKeys(settings);
+
+  // console.log('\n🚀 Resultado Final:', JSON.stringify(mappedProps, null, 2));
 
   return {
-    component: data.elType === 'widget' ? data.widgetType : data.elType,
+    component: componentType,
     props: mappedProps,
   };
 }

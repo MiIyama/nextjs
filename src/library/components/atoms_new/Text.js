@@ -1,10 +1,10 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 
-const Text = ({ text, ...props }) => {
+const Text = ({ editor, ...props }) => {
   return (
     <Typography variant="body1" {...props}>
-      {text}
+      {editor}
     </Typography>
   );
 };

@@ -5,11 +5,9 @@ import SectionBuilder from '../library/components/organisms_new/SectionBuilder';
 
 const Page = () => {
   return (
-    <Box>
+    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', border: '1px solid red' }}>
       {pageData.map((sectionData, index) => (
-        <Box data-function="SectionBuilderWrapper" key={index} sx={{ width: '100%', p: '20px', border: '5px solid black' }}>
-          <SectionBuilder data={sectionData} />
-        </Box>
+        <SectionBuilder key={index} data={sectionData} />
       ))}
     </Box>
   );
