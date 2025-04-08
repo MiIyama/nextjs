@@ -23,9 +23,9 @@ const componentRegistry = Object.keys(componentNameMap).reduce((acc, key) => {
 }, {});
 
 // 🔹 Função para criar um componente dinamicamente baseado no JSON
-const createComponent = (type, props) => {
+const createComponent = (type, props, id) => {
   const Component = componentRegistry[type];
-  return Component ? <Component {...props} /> : null;
+  return Component ? <Component a={id} {...props} /> : null;
 };
 
 export default createComponent;

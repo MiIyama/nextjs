@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 
 const Heading = ({ title, ...props }) => {
   return (
-    <Typography variant="h4" {...props}>
+    <Typography a="Heading" variant="h4" sx={{ ...props }}>
       {/* conferir se o variant está correto */}
       {title}
     </Typography>

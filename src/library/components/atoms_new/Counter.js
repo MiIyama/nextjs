@@ -3,7 +3,7 @@ import { Typography, Box } from '@mui/material';
 
 const Counter = ({ endingNumber, numberProps, titleProps, suffix, title, ...props }) => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', ...props }}>
+    <Box a="Counter" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', ...props }}>
       <Typography sx={numberProps}>
         {endingNumber}
         {suffix}

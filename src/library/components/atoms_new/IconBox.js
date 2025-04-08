@@ -5,10 +5,10 @@ import Image from 'next/image';
 
 const IconBox = ({ titleProps, descriptionProps, iconProps, rotate, ...props }) => {
   return (
-    <Box a="aaaaa" sx={{ border: props.borderBorder, ...props, borderWidth: `${props.borderWidth}px` }}>
+    <Box a="IconBox" sx={{ border: props.borderBorder, ...props, borderWidth: `${props.borderWidth}px` }}>
       {iconProps.icon && (
         <Box sx={{ rotate: `${rotate}`, ...iconProps }}>
-          <Image src={iconProps.icon.value.url} width={100} height={100} />
+          <Image alt="IconBox" src={iconProps.icon.value.url} width={100} height={100} />
         </Box>
       )}
 

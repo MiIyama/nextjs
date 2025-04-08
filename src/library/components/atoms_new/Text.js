@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 
 const Text = ({ editor, ...props }) => {
   return (
-    <Typography variant="body1" {...props}>
+    <Typography a="Text" variant="body1" sx={{ ...props }}>
       {editor}
     </Typography>
   );
