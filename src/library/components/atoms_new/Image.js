@@ -1,14 +1,24 @@
 import React from 'react';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
+import { Box } from '@mui/material';
 
-const ImageComponent = ({ image, alt = '', size, width, height, objectFit, ...props }) => {
+const ImageComponent = ({ image, size, width, height, objectFit, ...props }) => {
+  // console.log('width', width);
+  // console.log('image', Object.keys(props).length, '\n', props);
+  // console.log('width.size', width.size);
+
   // console.log('📌 Props recebidas:', props || 'Nenhuma propriedade recebida');
 
   // console.log('📌 Props recebidas:', JSON.stringify(props, null, 2));
   // console.log('📌 Todas as props separadas:', { src, alt, width, height, size, objectFit });
-  if (!image) return null;
-  return <Image src={image} alt={alt} width={width.size || 100} height={100} layout={size === 'full' ? 'responsive' : 'intrinsic'} {...props} />;
+  // if (!image) return null;
+  return (
+    <Box a="ImageComponent" sx={{ maxHeight: 100, overflow: 'hidden' }}>
+      {/* props acima - divider */}
+      <Image src={image} alt="ImageComponent" width={width.size || 50} height={50} layout={size === 'full' ? 'responsive' : 'intrinsic'} {...props} />{' '}
+    </Box>
+  );
 
   // return (
   //   <Box sx={{ position: 'relative', width, height }}>

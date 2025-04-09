@@ -22,9 +22,8 @@ const RenderComponent = ({ data }) => {
   }
 
   log.component('RenderComponent', '✅ Props do WIDGET após mapProps:', parsedData);
-
   const flattenedProps = flattenProperties(parsedData.props, propertiesMap);
-  return createComponent(parsedData.component, flattenedProps);
+  return createComponent(parsedData.component, flattenedProps, data.id);
 };
 
 export default RenderComponent;

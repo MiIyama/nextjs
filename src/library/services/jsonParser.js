@@ -39,7 +39,6 @@ const prefixMap = {
   },
   heading: { title: false, typography: false },
   container: {
-    content: false,
     flex: false, // 🔹 Remove "_global_", mas mantém na raiz
   },
   'text-editor': {
