@@ -10,12 +10,16 @@ module.exports = withBundleAnalyzer({
   poweredByHeader: false,
   trailingSlash: true,
   basePath: '',
-  reactStrictMode: true,
+  reactStrictMode: false, // mudar depois
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'picsum.photos',
+      },
+      {
+        protocol: 'https',
+        hostname: 'api.uichemy.com',
       },
     ],
   },
