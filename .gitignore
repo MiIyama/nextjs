@@ -34,4 +34,7 @@ local
 # vercel
 .vercel
 
+src/content/ex
+config.json
+.favorites.json
 *storybook.log
