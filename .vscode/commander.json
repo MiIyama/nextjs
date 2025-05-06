@@ -1,0 +1,47 @@
+{
+  "packageProcessor": "npm",
+  "commands": {
+    "Git": {
+      "command": " "
+    },
+    "- Log": {
+      "command": "git log --oneline"
+    },
+    "- Status": {
+      "command": "git status"
+    },
+    "- Add All": {
+      "command": "git add ."
+    },
+    "- Commit [WIP]": {
+      "command": "git commit -m \"wip\" --no-verify"
+    },
+    "- Push": {
+      "command": "git push"
+    },
+    "- Pull": {
+      "command": "git pull"
+    },
+    "- Checkout Main": {
+      "command": "git checkout main"
+    },
+    "- Merge Main": {
+      "command": "git merge main"
+    },
+    "- Reset Last Commit": {
+      "command": "git reset --soft HEAD~1"
+    },
+    "- Stash": {
+      "command": "git stash"
+    },
+    "- Stash Apply": {
+      "command": "git stash apply"
+    },
+    "- Fetch": {
+      "command": "git fetch"
+    },
+    "- Rebase Main": {
+      "command": "git rebase main"
+    }
+  }
+}

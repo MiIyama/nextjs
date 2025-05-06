@@ -1,17 +1,17 @@
-// Features.jsx
+// Services.jsx
 import { Grid } from '@mui/material';
-import FeaturesIcon from '@/library/components/molecules/FeaturesIcon';
+import ServicesItem from '@/library/components/molecules/ServicesItem';
 import Section from '@/library/components/atoms/Section';
 import ColumnLayout from '@/library/layout/ColumnLayout';
 import ContentBlock from '../molecules/ContentBlock';
 
-const Features = ({ content }) => {
+const Services = ({ content }) => {
   const { items, featuresProps, title, subtitle, proportions = [12], itemsPerRow = 2 } = content;
   const halfItems = Math.ceil(items.length / 2);
 
   const FeaturesItems = items.map((item, index) => (
     <Grid item xs={12 / itemsPerRow} key={`feature-item-${index}`}>
-      <FeaturesIcon title={item.title} description={item.description} config={featuresProps} />
+      <ServicesItem content={item} config={featuresProps} />
     </Grid>
   ));
 
@@ -33,7 +33,7 @@ const Features = ({ content }) => {
     case 2:
       columnsContent = [
         ContentTitle,
-        <Grid container key="all-items" spacing={4}>
+        <Grid container key="all-items" spacing={1}>
           {FeaturesItems}
         </Grid>,
       ];
@@ -58,4 +58,4 @@ const Features = ({ content }) => {
   );
 };
 
-export default Features;
+export default Services;
